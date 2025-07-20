@@ -23,7 +23,14 @@ body{
 	text-decoration: none;
 }
 
-
+header{
+	background: white; 
+	padding-top: 15px;
+	padding-bottom: 10px;
+	position: fixed;
+	width: 100%;
+	z-index: 34242;
+}
 
 
 .principal {
