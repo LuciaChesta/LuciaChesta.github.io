@@ -42,6 +42,7 @@ header{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
 
 .vertical-centered-text {
   -ms-display: flex;
