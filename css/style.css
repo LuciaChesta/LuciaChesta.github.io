@@ -24,23 +24,18 @@ body{
 }
 
 
-header{
-	background: white; 
-	padding-top: 15px;
-	padding-bottom: 10px;
-	position: fixed;
-	width: 100%;
-	z-index: 34242;
-}
 
-.principal{
-	background: red;
-	height: 90vh;
-	background: url(../images/Fondo paisaje.png)no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+
+.principal {
+  height: 100vh; /* Se adapta al alto total de la pantalla */
+  background-image: url(../images/Fondo paisaje.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
