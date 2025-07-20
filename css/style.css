@@ -28,7 +28,7 @@ body{
 .principal {
 	background: blue; /* por si no carga la imagen, se ve rojo */
 	height: 90vh;
-	background-image: url(../images/fondo-paisaje.png);
+	background-image: url(LuciaChesta.github.io/images/Fondo paisaje.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
