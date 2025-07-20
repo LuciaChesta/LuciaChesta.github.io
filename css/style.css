@@ -26,15 +26,13 @@ body{
 
 
 .principal {
-  height: 100vh; /* Se adapta al alto total de la pantalla */
-  background-image: url(../images/Fondo paisaje.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	background: blue; /* por si no carga la imagen, se ve rojo */
+	height: 90vh;
+	background-image: url(../images/fondo-paisaje.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 
