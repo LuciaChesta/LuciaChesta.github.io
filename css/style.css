@@ -245,8 +245,8 @@ footer h1{
 .mySwiper .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 200px;
-  height: 300px;
+  width: 160px;
+  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,8 +263,8 @@ footer h1{
 
 /* FLECHAS CARRUSEL - PARTE TRANSPARENTE MUY GRANDE */
 .swiper-button-next, .swiper-button-prev {
-  width: 1000px;      /* recuadro más grande */
-  height: 1000px;
+  width: 200px;      /* recuadro más grande */
+  height: 200px;
   background: rgba(255,255,255,0.3); /* transparente */
   border-radius: 20px;               /* bordes redondeados */
   top: 50%;
