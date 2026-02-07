@@ -245,8 +245,8 @@ footer h1{
 .mySwiper .swiper-slide, .mySwiper2 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 240px;
-  height: 160px;
+  width: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
