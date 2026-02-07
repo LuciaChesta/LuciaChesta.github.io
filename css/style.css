@@ -83,7 +83,7 @@ h1{
 	font-weight: 100;
 }
 
-/* DATOS DE INTERES (FULL WIDTH) */
+/* DATOS DE INTERES */
 .servicios{
 	width: 100%;
 	max-width: 100%;
@@ -119,9 +119,27 @@ h1{
 	text-align: center;
 }
 
+/* BOTONES OVALADOS */
+.social a{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 40px;
+	margin: 10px;
+	background: rgba(255,255,255,0.7);
+	border-radius: 999px;
+	transition: all 0.3s ease;
+}
+
+.social a:hover{
+	background: rgba(255,255,255,0.9);
+	transform: scale(1.05);
+}
+
 .social img{
-	width: 30%;
-	text-align: center;
+	width: 20px;
+	height: auto;
 }
 
 /* FOOTER */
@@ -162,7 +180,7 @@ footer h1{
 	}
 
 	.social img{
-		width: 100%;
+		width: 18px;
 	}
 
 	.botonera li a {
