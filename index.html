@@ -13,10 +13,7 @@
     <!-- responsive -->
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -24,7 +21,6 @@
 <header>
     <div class="container">
         <div class="row top">
-            <!-- logo -->
             <div class="col-md-4">
                 <a href="#home" class="off">
                     <img src="images/.png" alt="" class="logo">
@@ -91,11 +87,9 @@
     </div>
 </div>
 
-<!-- CARRUSEL COVERFLOW -->
+<!-- CARRUSEL SWIPER COVERFLOW -->
 <div class="container my-5" id="carousel-section">
     <h1 class="text-center mb-4">Antarctic Campaign</h1>
-
-    <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="images/A1.jpeg" alt="A1"></div>
@@ -109,7 +103,6 @@
             <div class="swiper-slide"><img src="images/A9.jpeg" alt="A9"></div>
             <div class="swiper-slide"><img src="images/A10.jpeg" alt="A10"></div>
         </div>
-
         <!-- Flechas -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -152,7 +145,7 @@
         crossorigin="anonymous"></script>
 
 <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
 $(document).ready(function() {    
@@ -162,31 +155,30 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop: offset}, 600);
         return false;
     });
+});
 
-    // Inicializar Swiper
-    const swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      loop: true,
-      spaceBetween: 30,
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 2,
-        slideShadows: false,
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+// Swiper coverflow
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
 });
 </script>
 
