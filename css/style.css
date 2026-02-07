@@ -1,6 +1,7 @@
 body{
 	background: #eeeeee;
 	font-family: 'Open Sans', sans-serif;
+	margin: 0;
 }
 
 /* Imagen fija de fondo para todo */
@@ -21,29 +22,6 @@ body::before{
 	width: 40px;
 }
 
-/* BOTONERA SOLO DEL HEADER */
-header .botonera li{
-	display: inline-block;
-	margin-left: 12px;
-}
-
-header .botonera li a{
-	color: #666;
-	font-weight: 700;
-	font-size: 16px;      /* tamaño del texto */
-	padding: 8px 14px;    /* tamaño del botón */
-	border: 2px solid #666;
-	border-radius: 12px;  /* qué tan ovalado */
-	text-decoration: none;
-	background: rgba(255,255,255,0.4);
-	transition: all 0.3s ease;
-}
-
-header .botonera li a:hover{
-	background: rgba(0,0,0,0.1);
-	color: black;
-}
-
 /* HEADER GENERAL */
 header{
 	background: white; 
@@ -51,7 +29,38 @@ header{
 	padding-bottom: 10px;
 	position: fixed;
 	width: 100%;
-	z-index: 34242;
+	z-index: 1000;
+}
+
+/* BOTONERA SUPERIOR */
+header .botonera{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 20px;
+}
+
+header .botonera li{
+	list-style: none;
+	margin-left: 12px;
+}
+
+header .botonera li a{
+	color: #666;
+	font-weight: 700;
+	font-size: 16px;
+	padding: 8px 14px;
+	border: 2px solid #666;
+	border-radius: 20px;
+	text-decoration: none;
+	background: rgba(255,255,255,0.6);
+	transition: all 0.3s ease;
+	display: inline-block;
+}
+
+header .botonera li a:hover{
+	background: rgba(0,0,0,0.1);
+	color: black;
 }
 
 /* SECCIÓN PRINCIPAL */
@@ -93,7 +102,7 @@ h1{
 	font-weight: 100;
 }
 
-/* DATOS DE INTERES (FULL WIDTH) */
+/* DATOS DE INTERES */
 .servicios{
 	width: 100%;
 	max-width: 100%;
@@ -131,7 +140,6 @@ h1{
 
 .social img{
 	width: 30%;
-	text-align: center;
 }
 
 /* FOOTER */
@@ -177,6 +185,7 @@ footer h1{
 
 	header .botonera li a {
 		font-size: 13px;
+		padding: 6px 10px;
 	}
 
 	.nosotros{
@@ -197,3 +206,4 @@ footer h1{
 		padding-top: 10px;
 	}
 }
+
