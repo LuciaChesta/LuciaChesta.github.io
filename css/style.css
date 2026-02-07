@@ -227,23 +227,28 @@ footer h1{
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  background: transparent; /* transparente para quitar bordes blancos */
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .swiper-slide {
-  background: #fff;
+  background: transparent; /* quitar fondo blanco */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;       /* más pequeño que antes */
-  height: 180px;      /* más pequeño que antes */
-  border-radius: 10px;
+  width: 150px;       /* más pequeño */
+  height: 150px;      /* más pequeño */
   overflow: hidden;
 }
 
 .swiper-slide img {
   display: block;
-  width: 70%;         /* más pequeño que antes */
-  height: 70%;        /* más pequeño que antes */
+  width: 70%;
+  height: 70%;
   object-fit: contain;
 }
 
