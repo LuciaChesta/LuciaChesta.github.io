@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   background: #eeeeee;
   font-family: 'Open Sans', sans-serif;
@@ -23,19 +27,19 @@ body::before{
 
 .botonera li{
   display: inline-block;
-  margin-left: 6px;
+  margin-left: 8px;
   font-weight: 700;
   font-size: 20px;
 }
 
 .botonera li a{
   color: #666;
-  padding: 4px 10px;        /* MÁS CHICO */
+  padding: 6px 14px;        /* un poco más grande */
   border: 1.5px solid #666;
-  border-radius: 20px;
+  border-radius: 22px;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 13px;         /* MÁS CHICO */
+  font-size: 14px;
 }
 
 .botonera li a:hover{
@@ -92,7 +96,7 @@ h1{
   font-weight: 100;
 }
 
-/* DATOS DE INTERES (FULL WIDTH) */
+/* DATOS DE INTERES */
 .servicios{
   width: 100%;
   max-width: 100%;
@@ -176,8 +180,8 @@ footer h1{
   }
 
   .botonera li a{
-    font-size: 12px;
-    padding: 3px 8px;
+    font-size: 13px;
+    padding: 5px 12px;
   }
 
   .nosotros{
