@@ -42,7 +42,6 @@
 <!-- SECCIÓN PRINCIPAL -->
 <div class="principal vertical-centered-text" id="home">
     <div class="fotodelcv">
-        <!-- <img src="images/fotocv.jpg" alt="fotocv" height="100px" width="100px"> -->
     </div>
     <div class="col-md-8 cta">
         <h1>Lucia Chesta</h1> 
@@ -90,7 +89,8 @@
 
 <!-- CARRUSEL SWIPER COVERFLOW -->
 <div class="container my-5" id="carousel-section">
-    <h1 class="text-center mb-4">Antarctic Campaign</h1>
+    <h1 class="text-center mb-2">Antarctic Campaign</h1>
+    <p class="text-center description mb-4">A collection of photos from Antarctic research campaigns, showcasing fieldwork, research vessels, and the beauty of the polar environment.</p>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="images/A1.jpeg" alt="A1"></div>
@@ -164,7 +164,7 @@ var swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
     slidesPerView: 3,
     loop: true,
-    spaceBetween: 30,
+    spaceBetween: 50, /* más espacio entre fotos */
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
