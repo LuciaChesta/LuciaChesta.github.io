@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <title>Lucia Chesta</title>
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-    <!-- CSS propio -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- link de HTML con CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Tipografía -->
+    <!-- Tipografia -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
 <header>
     <div class="container">
         <div class="row top">
+            <!-- logo -->
             <div class="col-md-4">
                 <a href="#home" class="off">
                     <img src="images/.png" alt="" class="logo">
@@ -37,6 +41,8 @@
 
 <!-- SECCIÓN PRINCIPAL -->
 <div class="principal vertical-centered-text" id="home">
+    <div class="fotodelcv">
+    </div>
     <div class="col-md-8 cta">
         <h1>Lucia Chesta</h1> 
         <p>Student of Oceanography / Mechanical Engineering</p>
@@ -47,7 +53,9 @@
 <div class="nosotros orange" id="about">
     <div class="container">
         <h1>About me</h1>
-        <p>Hello, and thank you for visiting my profile :) . My name is Lucia, and I’m a 27-year-old student and ocean lover with a strong interest in oceanographic research and scientific data analysis. I am particularly motivated by understanding natural processes and communicating science to diverse audiences. I enjoy working in challenging environments, such as Antarctic field campaigns and research vessels, where I can combine scientific work with hands-on experience. These opportunities have strengthened my ability to adapt, collaborate in multidisciplinary teams, and approach complex problems with curiosity and commitment to science.</p>
+        <p>
+        Hello, and thank you for visiting my profile :) . My name is Lucia, and I’m a 27-year-old student and ocean lover with a strong interest in oceanographic research and scientific data analysis. I am particularly motivated by understanding natural processes and communicating science to diverse audiences. I enjoy working in challenging environments, such as Antarctic field campaigns and research vessels, where I can combine scientific work with hands-on experience. These opportunities have strengthened my ability to adapt, collaborate in multidisciplinary teams, and approach complex problems with curiosity and commitment to science.
+        </p>
     </div>
 </div>
 
@@ -66,10 +74,12 @@
             <br>
             <h3>CV/Resume</h3>
         </div>
+
         <div class="col-md-3">        
             <a href="downloads/oce.pdf" target="_blank"><img src="images/tide.svg" alt=""></a>
             <h3>List of Oceanography courses</h3>
         </div>      
+
         <div class="col-md-3">        
             <a href="downloads/Plan_de_Estudios_Ingenieria_Mecanica.pdf" target="_blank"><img src="images/mecanica.png" alt=""></a>
             <h3>List of Mechanical Engineering courses</h3>
@@ -77,7 +87,7 @@
     </div>
 </div>
 
-<!-- CARRUSEL 1: ANTARCTIC CAMPAIGN -->
+<!-- CARRUSEL SWIPER COVERFLOW: ANTARCTIC CAMPAIGN -->
 <div class="container my-5" id="carousel-section">
     <h1 class="text-center mb-2">Antarctic Campaign</h1>
     <div class="swiper mySwiper">
@@ -93,13 +103,14 @@
             <div class="swiper-slide"><img src="images/A9.jpeg" alt="A9"></div>
             <div class="swiper-slide"><img src="images/A10.jpeg" alt="A10"></div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- Flechas independientes -->
+        <div class="swiper-button-next next1"></div>
+        <div class="swiper-button-prev prev1"></div>
     </div>
     <p class="text-center description mt-3">A collection of photos from Antarctic research campaigns, showcasing fieldwork, research vessels, and the beauty of the polar environment.</p>
 </div>
 
-<!-- CARRUSEL 2: LIFE IN EXTREMES -->
+<!-- CARRUSEL SWIPER COVERFLOW: LIFE IN EXTREMES -->
 <div class="container my-5" id="carousel-section-2">
     <h1 class="text-center mb-2">Life in extremes</h1>
     <div class="swiper mySwiper2">
@@ -109,14 +120,20 @@
             <div class="swiper-slide"><img src="images/L3.jpeg" alt="L3"></div>
             <div class="swiper-slide"><img src="images/L4.jpeg" alt="L4"></div>
             <div class="swiper-slide"><img src="images/L5.jpeg" alt="L5"></div>
+            <div class="swiper-slide"><img src="images/L6.jpeg" alt="L6"></div>
+            <div class="swiper-slide"><img src="images/L7.jpeg" alt="L7"></div>
+            <div class="swiper-slide"><img src="images/L8.jpeg" alt="L8"></div>
+            <div class="swiper-slide"><img src="images/L9.jpeg" alt="L9"></div>
+            <div class="swiper-slide"><img src="images/L10.jpeg" alt="L10"></div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- Flechas independientes -->
+        <div class="swiper-button-next next2"></div>
+        <div class="swiper-button-prev prev2"></div>
     </div>
     <p class="text-center description mt-3">Photos documenting extreme environments, showcasing the beauty and challenge of life in remote locations.</p>
 </div>
 
-<!-- FOOTER -->
+<!-- FOOTER / CONTACTO -->
 <footer>
     <div class="container" id="contact">
         <div class="row">
@@ -129,11 +146,13 @@
             <div class="col-2">
                 <a href="mailto:luciachesta@gmail.com"><img src="images/001-mail.svg" alt=""></a>
             </div>
+
             <div class="col-2">
                 <a href="https://www.linkedin.com/in/lucia-chesta-720383201/" target="_blank">
                     <img src="images/linkedintransparent.png" alt="">
                 </a>
             </div>
+
             <div class="col-2">
                 <a target="_blank" href="https://t.me/LuciaChesta"><img src="images/telegramlogo.png" alt=""></a>
             </div>    
@@ -142,8 +161,12 @@
 </footer>
 
 <!-- jQuery y Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
+        integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" 
+        crossorigin="anonymous"></script>
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -157,8 +180,8 @@ $(document).ready(function() {
     });
 });
 
-// Inicializar Swipers
-var swiper = new Swiper(".mySwiper", {
+// Inicializar Swiper - ambos carruseles
+var swiper1 = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
@@ -177,8 +200,8 @@ var swiper = new Swiper(".mySwiper", {
       slideShadows: false,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".next1",
+      prevEl: ".prev1",
     },
 });
 
@@ -201,10 +224,11 @@ var swiper2 = new Swiper(".mySwiper2", {
       slideShadows: false,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".next2",
+      prevEl: ".prev2",
     },
 });
 </script>
+
 </body>
 </html>
