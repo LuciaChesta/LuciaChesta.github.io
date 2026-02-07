@@ -9,7 +9,7 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Imagen fija de fondo para todo */
+/* Imagen fija de fondo */
 body::before{
   content: "";
   position: fixed;
@@ -27,7 +27,7 @@ body::before{
   width: 40px;
 }
 
-/* BOTONES SUPERIORES (menu) */
+/* BOTONES SUPERIORES */
 .botonera li{
   display: inline-block;
   margin-left: 8px;
@@ -229,6 +229,8 @@ footer h1{
 #carousel-section .description {
   color: #555;
   font-size: 16px;
+  max-width: 600px;
+  margin: 15px auto 0 auto;
 }
 
 /* SWIPER */
@@ -242,8 +244,8 @@ footer h1{
 .mySwiper .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 200px; /* fotos más chicas */
-  height: 280px;
+  width: 180px;
+  height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -258,9 +260,9 @@ footer h1{
 }
 
 .swiper-button-next, .swiper-button-prev {
-  width: 50px;
-  height: 50px;
-  background: rgba(255,255,255,0.7); /* fondo más transparente y agradable */
+  width: 80px;   /* recuadro más grande */
+  height: 80px;
+  background: rgba(255,255,255,0.3);
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
@@ -268,12 +270,12 @@ footer h1{
 
 .swiper-button-next::after, .swiper-button-prev::after {
   font-size: 20px;
-  color: black;
+  color: black; /* flecha negra */
 }
 
 @media (max-width: 768px) {
   .mySwiper .swiper-slide {
-    width: 150px;
-    height: 220px;
+    width: 140px;
+    height: 200px;
   }
 }
