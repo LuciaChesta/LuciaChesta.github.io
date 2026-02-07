@@ -30,10 +30,16 @@ body::before{
 
 .botonera li a{
   color: #666;
+  padding: 6px 14px;        /* tamaño del botón */
+  border: 2px solid #666;  /* borde */
+  border-radius: 25px;     /* forma ovalada */
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .botonera li a:hover{
-  color: black;
+  color: white;
+  background: #666;
   text-decoration: none;
 }
 
