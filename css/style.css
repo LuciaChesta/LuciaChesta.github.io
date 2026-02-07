@@ -35,11 +35,11 @@ body::before{
 
 .botonera li a{
   color: #666;
-  padding: 8px 18px;       /* tamaño del botón */
-  border: 2px solid #666;  /* recuadro */
-  border-radius: 25px;     /* forma ovalada */
+  padding: 8px 18px;
+  border: 2px solid #666;
+  border-radius: 25px;
   text-decoration: none;
-  font-size: 15px;         /* tamaño letra */
+  font-size: 15px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
@@ -164,7 +164,7 @@ footer h1{
 
 /* Evita que el header tape las secciones al hacer scroll */
 #about, #fields, #contact {
-    scroll-margin-top: 90px; /* Ajusta según altura de tu header */
+    scroll-margin-top: 90px;
 }
 
 /* MEDIA QUERY */
@@ -212,21 +212,21 @@ footer h1{
 }
 
 /* =========================
-   CARRUSEL ANTARCTIC CAMPAIGN
+   CARRUSELES SWIPER
    ========================= */
-#carousel-section {
-  background: rgba(255,255,255,0.8); /* Fondo semitransparente */
+#carousel-section, #carousel-section-2 {
+  background: rgba(255,255,255,0.8);
   padding: 50px 0;
   border-radius: 10px;
 }
 
-#carousel-section h1 {
+#carousel-section h1, #carousel-section-2 h1 {
   color: #333;
   font-weight: 600;
   font-size: 36px;
 }
 
-#carousel-section p.description {
+#carousel-section p.description, #carousel-section-2 p.description {
   text-align: center;
   font-size: 16px;
   max-width: 600px;
@@ -235,25 +235,25 @@ footer h1{
 }
 
 /* Swiper Carrusel Estilo Revista */
-.mySwiper {
+.mySwiper, .mySwiper2 {
   width: 100%;
   max-width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
-.mySwiper .swiper-slide {
+.mySwiper .swiper-slide, .mySwiper2 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 200px;
-  height: 300px;
+  width: 240px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px; /* espacio entre fotos */
+  margin-right: 20px;
 }
 
-.mySwiper .swiper-slide img {
+.mySwiper .swiper-slide img, .mySwiper2 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -261,23 +261,18 @@ footer h1{
   border-radius: 10px;
 }
 
-/* FLECHAS CARRUSEL - PARTE TRANSPARENTE MUY GRANDE */
+/* FLECHAS CARRUSEL - TRANSPARENTES Y GRANDES */
 .swiper-button-next, .swiper-button-prev {
-  width: 200px;      /* recuadro más grande */
-  height: 200px;
-  background: rgba(255,255,255,0.3); /* transparente */
-  border-radius: 20px;               /* bordes redondeados */
-  top: 50%;
-  transform: translateY(-50%);
+  width: 200px !important;
+  height: 200px !important;
+  background: rgba(255,255,255,0.3) !important;
+  border-radius: 30px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1000 !important;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 20px;
-  color: black; /* flecha negra */
-}
-
-/* TAMAÑO DE LA FLECHA NEGRA */
-.swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 20px !important;   /* flecha más grande */
-  color: black !important;      /* color de la flecha */
+  font-size: 40px !important;
+  color: black !important;
 }
