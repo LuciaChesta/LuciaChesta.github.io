@@ -210,3 +210,51 @@ footer h1{
     padding-top: 10px;
   }
 }
+
+/* =========================
+   CARRUSEL ANTARCTIC CAMPAIGN
+   ========================= */
+#carousel-section {
+  background: rgba(255,255,255,0.8); /* Fondo semitransparente */
+  padding: 50px 0;
+  border-radius: 10px;
+}
+
+#carousel-section h1 {
+  color: #333;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+/* Controles personalizados */
+.custom-control {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5); /* Rectángulo transparente */
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; /* Flecha negra */
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+  mask-size: cover;
+}
+
+.carousel-control-prev {
+  left: 15px;
+}
+
+.carousel-control-next {
+  right: 15px;
+}
+
+/* Asegura que las imágenes no deformen */
+#antarcticCarousel img {
+  max-height: 400px;
+  object-fit: cover;
+}
