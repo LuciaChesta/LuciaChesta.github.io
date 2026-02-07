@@ -68,7 +68,10 @@ h1{
 
 /* SOBRE MI */
 .nosotros{
-	width: 100%;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 	height: 60vh;
 	text-align: center;
 	padding-top: 100px;
