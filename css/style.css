@@ -73,19 +73,23 @@ h1{
 	text-align: center;
 	padding-top: 100px;
 	color: rgba(255,255,255,.9);
-	background: rgba(0,0,0,0.35); /* <<< TRANSPARENCIA */
+	background: rgba(0,0,0,0.35);
 }
 
 .nosotros h1{
 	font-weight: 100;
 }
 
-/* DATOS DE INTERES */
+/* DATOS DE INTERES (FULL WIDTH) */
 .servicios{
+	width: 100%;
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
 	text-align: center;
 	padding-top: 150px;
 	padding-bottom: 50px;
-	background: rgba(255,255,255,0.75); /* <<< TRANSPARENCIA */
+	background: rgba(255,255,255,0.75);
 }
 
 .servicios img{
@@ -119,9 +123,10 @@ h1{
 
 /* FOOTER */
 footer{
-	background: rgba(117,117,117,0.35); /* <<< TRANSPARENCIA */
+	background: rgba(117,117,117,0.35);
 	height: 50vh;
 	padding-top: 30px;
+	width: 100%;
 }
 
 footer h1{
