@@ -261,12 +261,12 @@ footer h1{
   border-radius: 10px;
 }
 
-/* FLECHAS CARRUSEL - PARTE TRANSPARENTE MÁS GRANDE */
+/* FLECHAS CARRUSEL - PARTE TRANSPARENTE MUY GRANDE */
 .swiper-button-next, .swiper-button-prev {
-  width: 120px;      /* recuadro más grande */
-  height: 120px;
+  width: 200px;      /* recuadro más grande */
+  height: 200px;
   background: rgba(255,255,255,0.3); /* transparente */
-  border-radius: 15px;               /* bordes redondeados */
+  border-radius: 20px;               /* bordes redondeados */
   top: 50%;
   transform: translateY(-50%);
 }
