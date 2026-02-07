@@ -1,12 +1,11 @@
 body{
 	background: #eeeeee;
 	font-family: 'Open Sans', sans-serif;
-
 }
+
 .logo{
 	width: 40px;
 }
-
 
 .botonera li{
 	display: inline-block;
@@ -16,14 +15,11 @@ body{
 }
 .botonera li a{
 	color: #666;
-
 }
 .botonera li a:hover{
 	color: black;
 	text-decoration: none;
 }
-
-
 
 header{
 	background: white; 
@@ -35,21 +31,14 @@ header{
 }
 
 .principal{
-	background: red;
 	height: 90vh;
-	background: url(../images/Fondo paisaje.jpg)no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	background: url("../images/Fondo paisaje.jpg") no-repeat center center;
+	background-size: cover;
 }
 
 .vertical-centered-text {
-  -ms-display: flex;
   display: flex;
-  /* alineacion vertical */
   align-items: center;
-   /* alineacion horizontal */
   justify-content: center;
 }
 
@@ -63,7 +52,6 @@ h1{
 }
 
 .orange{
-
 	background: #008ae6;
 }
 
@@ -77,6 +65,7 @@ h1{
 .nosotros h1{
 	font-weight: 100;
 }
+
 .servicios{
 	text-align: center;
 	padding-top: 150px;
@@ -97,9 +86,9 @@ h1{
 
 .images .col-md-3{
 	padding-top: 20px;
-	margin: auto
-;
+	margin: auto;
 }
+
 .social{
 	text-align: center;
 }
@@ -121,45 +110,52 @@ footer h1{
 #home {
 	color: white;
 }
+
 .col-xs-4{
 	text-align: center;
 }
 
+@media only screen and (max-device-width: 480px), 
+       only screen and (min-device-width: 560px) and (max-device-width: 1136px) {
 
-/*@media only screen 
-and (min-device-width : 414px) 
-and (max-device-width : 736px) { }
-@media only screen and (min-width: 324px) and (max-width: 736px) {*/
-@media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) {
-  /* iPhone only */
-  /* Styles */
   .off {
     display: none !important;
   }
   .on {
     display: block !important;
   }
+
   .col-md-2 {
     width: 100%;
   }
+
   .social img{
   	width: 100%;
   }
+
   .botonera li a {
     font-size: 13px;
-}
-.nosotros{
+  }
+
+  .nosotros{
 	height: 400px;
 	overflow: hidden;
 	padding-top: 15px;
-}
-#home{
+  }
+
+  #home{
 	padding-top: 65px;
+  }
+
+  h1{
+	font-size: 30px;
+  }
+
+  footer{
+	padding-top: 10px;
+  }
 }
 
-h1{
-	font-size: 30px;
-}
 
 footer{
 	padding-top: 10px;
