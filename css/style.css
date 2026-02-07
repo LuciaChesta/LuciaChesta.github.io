@@ -1,10 +1,10 @@
-body {
+body{
   background: #eeeeee;
   font-family: 'Open Sans', sans-serif;
 }
 
 /* Imagen fija de fondo para todo */
-body::before {
+body::before{
   content: "";
   position: fixed;
   top: 0;
@@ -17,27 +17,27 @@ body::before {
 }
 
 /* HEADER */
-.logo {
+.logo{
   width: 40px;
 }
 
-.botonera li {
+.botonera li{
   display: inline-block;
   margin-left: 8px;
   font-weight: 700;
   font-size: 20px;
 }
 
-.botonera li a {
+.botonera li a{
   color: #666;
 }
 
-.botonera li a:hover {
+.botonera li a:hover{
   color: black;
   text-decoration: none;
 }
 
-header {
+header{
   background: white;
   padding-top: 15px;
   padding-bottom: 10px;
@@ -47,29 +47,29 @@ header {
 }
 
 /* SECCIÓN PRINCIPAL */
-.principal {
+.principal{
   height: 90vh;
   background: transparent;
 }
 
-.vertical-centered-text {
+.vertical-centered-text{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cta {
+.cta{
   text-align: center;
 }
 
-h1 {
+h1{
   font-weight: 700;
   font-size: 50px;
   color: white;
 }
 
 /* SOBRE MI */
-.nosotros {
+.nosotros{
   width: 100vw;
   position: relative;
   left: 50%;
@@ -81,12 +81,12 @@ h1 {
   background: rgba(0,0,0,0.35);
 }
 
-.nosotros h1 {
+.nosotros h1{
   font-weight: 100;
 }
 
 /* DATOS DE INTERES (FULL WIDTH) */
-.servicios {
+.servicios{
   width: 100%;
   max-width: 100%;
   margin-left: 0;
@@ -97,96 +97,96 @@ h1 {
   background: rgba(255,255,255,0.75);
 }
 
-.servicios img {
+.servicios img{
   width: 40%;
   text-align: center;
 }
 
-.servicios h1 {
+.servicios h1{
   color: #666;
   font-weight: 100;
 }
 
-.servicios .images {
+.servicios .images{
   padding-top: 30px;
 }
 
-.images .col-md-3 {
+.images .col-md-3{
   padding-top: 20px;
   margin: auto;
 }
 
 /* SOCIAL */
-.social {
+.social{
   text-align: center;
 }
 
-.social img {
+.social img{
   width: 30%;
   text-align: center;
 }
 
 /* FOOTER */
-footer {
+footer{
   background: rgba(117,117,117,0.35);
   height: 50vh;
   padding-top: 30px;
   width: 100%;
 }
 
-footer h1 {
+footer h1{
   text-align: center;
   font-weight: 100;
   color: white;
 }
 
-#home {
+#home{
   color: white;
 }
 
-.col-xs-4 {
+.col-xs-4{
   text-align: center;
 }
 
 /* MEDIA QUERY */
 @media only screen and (max-device-width: 480px),
-       only screen and (min-device-width: 560px) and (max-device-width: 1136px) {
+       only screen and (min-device-width: 560px) and (max-device-width: 1136px){
 
-  .off {
+  .off{
     display: none !important;
   }
 
-  .on {
+  .on{
     display: block !important;
   }
 
-  .col-md-2 {
+  .col-md-2{
     width: 100%;
   }
 
-  .social img {
+  .social img{
     width: 100%;
   }
 
-  .botonera li a {
+  .botonera li a{
     font-size: 13px;
   }
 
-  .nosotros {
+  .nosotros{
     height: 400px;
     overflow: hidden;
     padding-top: 15px;
   }
 
-  #home {
+  #home{
     padding-top: 65px;
   }
 
-  h1 {
+  h1{
     font-size: 30px;
   }
 
-  footer {
+  footer{
     padding-top: 10px;
   }
 }
