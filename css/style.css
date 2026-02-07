@@ -227,7 +227,7 @@ footer h1{
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  background: transparent; /* transparente para quitar bordes blancos */
+  background: transparent;
 }
 
 .swiper-wrapper {
@@ -236,19 +236,19 @@ footer h1{
 }
 
 .swiper-slide {
-  background: transparent; /* quitar fondo blanco */
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;       /* más pequeño */
-  height: 150px;      /* más pequeño */
+  width: 120px;       /* más chico */
+  height: 120px;      /* más chico */
   overflow: hidden;
 }
 
 .swiper-slide img {
   display: block;
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
 
