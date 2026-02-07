@@ -1,114 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Lucia Chesta</title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Tipografía -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta charset="UTF-8">
+    <title>Lucia Chesta</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- link de HTML con CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tipografia -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <div class="row top">
-      <div class="col-md-4">
-        <a href="#home" class="off">
-          <img src="images/.png" alt="" class="logo">
-        </a>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-5">
-        <ul class="botonera">
-          <li><a href="#About-me">About me</a></li>
-          <li><a href="#Fields-of-interest">Fields of interest</a></li>
-          <li><a href="#Contact">Contact</a></li>
-        </ul>
-      </div>
+    <div class="container">
+        <div class="row top">
+            <!-- logo -->
+            <div class="col-md-4">
+                <a href="#home" class="off">
+                    <img src="images/.png" alt="" class="logo">
+                </a>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5">
+                <ul class="botonera">
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#fields">Fields of interest</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
 
+<!-- SECCIÓN PRINCIPAL -->
 <div class="principal vertical-centered-text" id="home">
-  <div class="col-md-8 cta">
-    <h1>Lucia Chesta</h1>
-    <p>Student of Oceanography / Mechanical Engineering</p>
-  </div>
+    <div class="fotodelcv">
+        <!-- <img src="images/fotocv.jpg" alt="fotocv" height="100px" width="100px"> -->
+    </div>
+    <div class="col-md-8 cta">
+        <h1>Lucia Chesta</h1> 
+        <p>Student of Oceanography / Mechanical Engineering</p>
+    </div>
 </div>
 
-<div class="nosotros orange" id="About-me">
-  <div class="container">
-    <h1>About me</h1>
-    <p>Hello, and thank you for visiting my profile :) . My name is Lucia, and I’m a 27-year-old student and ocean lover with a strong interest in oceanographic research and scientific data analysis. I am particularly motivated by understanding natural processes and communicating science to diverse audiences. I enjoy working in challenging environments, such as Antarctic field campaigns and research vessels, where I can combine scientific work with hands-on experience.</p>
-  </div>
+<!-- SOBRE MI -->
+<div class="nosotros orange" id="about">
+    <div class="container">
+        <h1>About me</h1>
+        <p>
+        Hello, and thank you for visiting my profile :) . My name is Lucia, and I’m a 27-year-old student and ocean lover with a strong interest in oceanographic research and scientific data analysis. I am particularly motivated by understanding natural processes and communicating science to diverse audiences. I enjoy working in challenging environments, such as Antarctic field campaigns and research vessels, where I can combine scientific work with hands-on experience. These opportunities have strengthened my ability to adapt, collaborate in multidisciplinary teams, and approach complex problems with curiosity and commitment to science.
+        </p>
+    </div>
 </div>
 
-<div class="container servicios" id="Fields-of-interest">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Relevant Information</h1>
-    </div>
-  </div>
-  <div class="row images">
-    <div class="col-md-3">
-      <a href="downloads/Lucia_Chesta_CV_ingles.pdf" target="_blank" download><img src="images/cvicon.png" alt=""></a>
-      <h3>CV/Resume</h3>
-    </div>
-    <div class="col-md-3">
-      <a href="downloads/oce.pdf" target="_blank"><img src="images/tide.svg" alt=""></a>
-      <h3>List of Oceanography courses</h3>
-    </div>
-    <div class="col-md-3">
-      <a href="downloads/Plan_de_Estudios_Ingenieria_Mecanica.pdf" target="_blank"><img src="images/mecanica.png" alt=""></a>
-      <h3>List of Mechanical Engineering courses</h3>
-    </div>
-  </div>
-</div>
-
-<!-- Carrusel Horizontal -->
-<div class="photo-carousel">
-  <button class="carousel-btn prev">&#10094;</button>
-  
-  <div class="carousel-track-container">
-    <ul class="carousel-track">
-      <li class="carousel-slide"><img src="images/foto1.jpg" alt=""><h3>Title 1</h3></li>
-      <li class="carousel-slide"><img src="images/foto2.jpg" alt=""><h3>Title 2</h3></li>
-      <li class="carousel-slide"><img src="images/foto3.jpg" alt=""><h3>Title 3</h3></li>
-      <li class="carousel-slide"><img src="images/foto4.jpg" alt=""><h3>Title 4</h3></li>
-    </ul>
-  </div>
-  
-  <button class="carousel-btn next">&#10095;</button>
-</div>
-
-<footer id="Contact">
-  <div class="container">
+<!-- DATOS DE INTERES -->
+<div class="container servicios" id="fields">
     <div class="row">
-      <div class="col-md-12">
-        <h1>Reach out to me</h1>
-      </div>
+        <div class="col-md-12">
+            <h1>Relevant Information</h1>
+        </div>
     </div>
-    <div class="row social">
-      <div class="col-3"></div>
-      <div class="col-2">
-        <a href="mailto:luciachesta@gmail.com"><img src="images/001-mail.svg" alt=""></a>
-      </div>
-      <div class="col-2">
-        <a href="https://www.linkedin.com/in/lucia-chesta-720383201/" target="_blank"><img src="images/linkedintransparent.png" alt=""></a>
-      </div>
-      <div class="col-2">
-        <a target="_blank" href="https://t.me/LuciaChesta"><img src="images/telegramlogo.png" alt=""></a>
-      </div>
+    <div class="row images">
+        <div class="col-md-3">
+            <a href="downloads/Lucia_Chesta_CV_ingles.pdf" target="_blank" download>
+                <img src="images/cvicon.png" alt="">
+            </a>
+            <br>
+            <h3>CV/Resume</h3>
+        </div>
+
+        <div class="col-md-3">        
+            <a href="downloads/oce.pdf" target="_blank"><img src="images/tide.svg" alt=""></a>
+            <h3>List of Oceanography course</h3>
+        </div>      
+
+        <div class="col-md-3">        
+            <a href="downloads/Plan_de_Estudios_Ingenieria_Mecanica.pdf" target="_blank"><img src="images/mecanica.png" alt=""></a>
+            <h3>List of Mechanical Engineering courses</h3>
+        </div>
     </div>
-  </div>
+</div>
+
+<!-- FOOTER / CONTACTO -->
+<footer>
+    <div class="container" id="contact">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Reach out to me</h1><br><br>
+            </div>
+        </div>
+        <div class="row social">
+            <div class="col-3"></div>    
+            <div class="col-2">
+                <a href="mailto:luciachesta@gmail.com"><img src="images/001-mail.svg" alt=""></a>
+            </div>
+
+            <div class="col-2">
+                <a href="https://www.linkedin.com/in/lucia-chesta-720383201/" target="_blank">
+                    <img src="images/linkedintransparent.png" alt="">
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a target="_blank" href="https://t.me/LuciaChesta"><img src="images/telegramlogo.png" alt=""></a>
+            </div>    
+        </div>
+    </div>
 </footer>
 
-<!-- JS -->
-<script src="js/carousel.js"></script> <!-- Este es tu JS del carrusel -->
+<!-- jQuery y Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
+        integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" 
+        crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {    
+    $('.botonera a').click(function(e){
+        e.preventDefault();
+        var offset = $($(this).attr('href')).offset().top;
+        $('html, body').animate({scrollTop: offset}, 600);
+        return false;
+    });
+});
+</script>
+
 </body>
 </html>
