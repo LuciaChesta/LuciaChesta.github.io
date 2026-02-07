@@ -234,16 +234,16 @@ footer h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 250px;
-  height: 250px;
+  width: 180px;       /* más pequeño que antes */
+  height: 180px;      /* más pequeño que antes */
   border-radius: 10px;
   overflow: hidden;
 }
 
 .swiper-slide img {
   display: block;
-  width: 80%;
-  height: 80%;
+  width: 70%;         /* más pequeño que antes */
+  height: 70%;        /* más pequeño que antes */
   object-fit: contain;
 }
 
