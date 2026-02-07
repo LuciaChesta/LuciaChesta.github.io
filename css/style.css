@@ -2,13 +2,8 @@ html, body{
 	height: 100%;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
-
-	/* IMAGEN DE FONDO */
-	background-image: url("../images/Fondo paisaje.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
+	background: url("../images/Fondo paisaje.jpg") no-repeat center center fixed;
 	background-size: cover;
-	background-attachment: fixed;
 }
 
 /* HEADER */
