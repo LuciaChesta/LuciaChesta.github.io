@@ -245,8 +245,8 @@ footer h1{
 .mySwiper .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 240px;
-  height: 160px;
+  width: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,15 +262,18 @@ footer h1{
 }
 
 /* FLECHAS CARRUSEL - PARTE TRANSPARENTE MUY GRANDE */
-/* FLECHAS CARRUSEL - PARTE TRANSPARENTE GRANDE */
 .swiper-button-next, .swiper-button-prev {
-  width: 400px !important;       /* ancho del recuadro transparente */
-  height: 400px !important;      /* alto del recuadro transparente */
-  background: rgba(255,255,255,0.3) !important; /* color + transparencia */
-  border-radius: 30px !important;                /* bordes redondeados */
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  z-index: 1000 !important;      /* para asegurarse de que esté arriba */
+  width: 200px;      /* recuadro más grande */
+  height: 200px;
+  background: rgba(255,255,255,0.3); /* transparente */
+  border-radius: 20px;               /* bordes redondeados */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px;
+  color: black; /* flecha negra */
 }
 
 /* TAMAÑO DE LA FLECHA NEGRA */
