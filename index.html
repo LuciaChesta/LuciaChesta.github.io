@@ -21,6 +21,7 @@
 <header>
     <div class="container">
         <div class="row top">
+            <!-- logo -->
             <div class="col-md-4">
                 <a href="#home" class="off">
                     <img src="images/.png" alt="" class="logo">
@@ -146,7 +147,6 @@
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
 <script>
 $(document).ready(function() {    
     $('.botonera a').click(function(e){
@@ -157,13 +157,14 @@ $(document).ready(function() {
     });
 });
 
-// Swiper coverflow
+// Inicializar Swiper
 var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: "auto",
+    slidesPerView: 3,
     loop: true,
+    spaceBetween: 30,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -171,7 +172,7 @@ var swiper = new Swiper(".mySwiper", {
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      depth: 100,
+      depth: 150,
       modifier: 1,
       slideShadows: false,
     },
