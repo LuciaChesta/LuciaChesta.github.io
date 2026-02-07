@@ -1,20 +1,9 @@
-body{
-	background: #eeeeee;
-	font-family: 'Open Sans', sans-serif;
-	margin: 0;
-}
-
-/* Imagen fija de fondo para todo */
-body::before{
-	content: "";
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
+html, body{
 	height: 100%;
-	background: url("../images/Fondo paisaje.jpg") no-repeat center center;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	background: url("../images/Fondo paisaje.jpg") no-repeat center center fixed;
 	background-size: cover;
-	z-index: -1;
 }
 
 /* HEADER */
@@ -22,45 +11,36 @@ body::before{
 	width: 40px;
 }
 
-/* HEADER GENERAL */
+/* BOTONES SUPERIORES (menu) */
+.botonera li{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.botonera li a{
+	color: #666;
+	font-weight: 600;
+	font-size: 14px;            /* tamaño letra */
+	padding: 6px 14px;         /* tamaño del botón */
+	border: 2px solid #666;    /* recuadro */
+	border-radius: 25px;       /* forma ovalada */
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.botonera li a:hover{
+	color: white;
+	background: #666;
+}
+
+/* HEADER */
 header{
 	background: white; 
 	padding-top: 15px;
 	padding-bottom: 10px;
 	position: fixed;
 	width: 100%;
-	z-index: 1000;
-}
-
-/* BOTONERA SUPERIOR */
-header .botonera{
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	padding-right: 20px;
-}
-
-header .botonera li{
-	list-style: none;
-	margin-left: 12px;
-}
-
-header .botonera li a{
-	color: #666;
-	font-weight: 700;
-	font-size: 16px;
-	padding: 8px 14px;
-	border: 2px solid #666;
-	border-radius: 20px;
-	text-decoration: none;
-	background: rgba(255,255,255,0.6);
-	transition: all 0.3s ease;
-	display: inline-block;
-}
-
-header .botonera li a:hover{
-	background: rgba(0,0,0,0.1);
-	color: black;
+	z-index: 34242;
 }
 
 /* SECCIÓN PRINCIPAL */
@@ -105,9 +85,6 @@ h1{
 /* DATOS DE INTERES */
 .servicios{
 	width: 100%;
-	max-width: 100%;
-	margin-left: 0;
-	margin-right: 0;
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -116,7 +93,6 @@ h1{
 
 .servicios img{
 	width: 40%;
-	text-align: center;
 }
 
 .servicios h1{
@@ -183,9 +159,9 @@ footer h1{
 		width: 100%;
 	}
 
-	header .botonera li a {
-		font-size: 13px;
-		padding: 6px 10px;
+	.botonera li a {
+		font-size: 12px;
+		padding: 5px 10px;
 	}
 
 	.nosotros{
