@@ -34,6 +34,7 @@ header{
 	height: 90vh;
 	background: url("../images/Fondo  paisaje.jpg") no-repeat center center;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .vertical-centered-text {
@@ -154,11 +155,4 @@ footer h1{
   footer{
 	padding-top: 10px;
   }
-}
-
-
-footer{
-	padding-top: 10px;
-}
-
 }
