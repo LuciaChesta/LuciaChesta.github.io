@@ -1,7 +1,9 @@
+/* SCROLL SUAVE */
 html{
   scroll-behavior: smooth;
 }
 
+/* BODY Y FONDO */
 body{
   background: #eeeeee;
   font-family: 'Open Sans', sans-serif;
@@ -21,33 +23,6 @@ body::before{
 }
 
 /* HEADER */
-.logo{
-  width: 40px;
-}
-
-.botonera li{
-  display: inline-block;
-  margin-left: 8px;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.botonera li a{
-  color: #666;
-  padding: 6px 14px;        /* un poco más grande */
-  border: 1.5px solid #666;
-  border-radius: 22px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
-
-.botonera li a:hover{
-  color: white;
-  background: #666;
-  text-decoration: none;
-}
-
 header{
   background: white;
   padding-top: 15px;
@@ -55,6 +30,42 @@ header{
   position: fixed;
   width: 100%;
   z-index: 34242;
+}
+
+/* LOGO */
+.logo{
+  width: 40px;
+}
+
+/* BOTONERA SUPERIOR */
+.botonera{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.botonera li{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.botonera li a{
+  color: #666;
+  font-weight: 600;
+  font-size: 14px;        /* tamaño letra */
+  padding: 7px 18px;       /* tamaño del botón */
+  border: 2px solid #666;  /* recuadro */
+  border-radius: 25px;     /* forma ovalada */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.botonera li a:hover{
+  color: white;
+  background: #666;
 }
 
 /* SECCIÓN PRINCIPAL */
@@ -90,6 +101,7 @@ h1{
   padding-top: 100px;
   color: rgba(255,255,255,.9);
   background: rgba(0,0,0,0.35);
+  scroll-margin-top: 90px;  /* Para compensar header fijo */
 }
 
 .nosotros h1{
@@ -106,6 +118,7 @@ h1{
   padding-top: 50px;
   padding-bottom: 50px;
   background: rgba(255,255,255,0.75);
+  scroll-margin-top: 90px;
 }
 
 .servicios img{
@@ -143,6 +156,7 @@ footer{
   height: 50vh;
   padding-top: 30px;
   width: 100%;
+  scroll-margin-top: 90px;
 }
 
 footer h1{
