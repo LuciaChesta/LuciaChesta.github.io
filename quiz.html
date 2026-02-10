@@ -4,22 +4,66 @@
 <meta charset="UTF-8">
 <title>Lucia Quiz</title>
 <link rel="stylesheet" href="css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quiz-box {
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 15px;
+  width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.timer {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.answers button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #666;
+  color: white;
+  cursor: pointer;
+}
+
+.answers button:hover {
+  background: #444;
+}
+</style>
 </head>
 
-<body class="quiz-body">
+<body>
 
-<div class="quiz-container">
-    <div class="timer">⏳ <span id="time">10</span></div>
+<div class="quiz-box">
+  <div class="timer">⏳ <span id="time">10</span></div>
+  <h2 id="question">Question 1</h2>
 
-    <h2 id="question">Question 1</h2>
-
-    <div class="answers">
-        <button onclick="selectAnswer()">Answer 1</button>
-        <button onclick="selectAnswer()">Answer 2</button>
-        <button onclick="selectAnswer()">Answer 3</button>
-        <button onclick="selectAnswer()">Answer 4</button>
-    </div>
+  <div class="answers">
+    <button onclick="answer()">Answer 1</button>
+    <button onclick="answer()">Answer 2</button>
+    <button onclick="answer()">Answer 3</button>
+    <button onclick="answer()">Answer 4</button>
+  </div>
 </div>
 
 <script src="quiz.js"></script>
