@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Lucia Quiz</title>
-<link rel="stylesheet" href="css/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -12,16 +11,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #eeeeee;
-  font-family: 'Open Sans', sans-serif;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
 }
 
 .quiz-box {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
   padding: 30px;
   border-radius: 15px;
   width: 500px;
-  max-width: 95%;
   text-align: center;
   position: relative;
 }
@@ -47,7 +45,7 @@ body {
   background: #666;
   color: white;
   cursor: pointer;
-  font-weight: 600;
+  font-size: 14px;
 }
 
 .answers button:hover {
@@ -60,8 +58,7 @@ body {
 
 <div class="quiz-box">
   <div class="timer">⏳ <span id="time">10</span></div>
-  <h2 id="question">Question 1</h2>
-
+  <h2 id="question"></h2>
   <div class="answers">
     <button></button>
     <button></button>
@@ -70,6 +67,129 @@ body {
   </div>
 </div>
 
-<script src="quiz.js"></script>
+<script>
+// ====== Quiz JS ======
+let questions = [
+  {
+    text: "Where did Lucia study Oceanography?",
+    answers: [
+      "Stanford University",
+      "Fudan University",
+      "University of Buenos Aires",
+      "National University of the South"
+    ],
+    correct: 2
+  },
+  {
+    text: "What does Lucia like to do in her free time?",
+    answers: [
+      "Read",
+      "Do sports",
+      "Learn about new things",
+      "All options are correct"
+    ],
+    correct: 3
+  },
+  {
+    text: "What best describes Lucia’s professional profile?",
+    answers: [
+      "She enjoys working on challenging tasks that push her to grow every day.",
+      "She is interested in fashion design",
+      "She prefers working alone and avoids challenges",
+      "She wants to work only in offices"
+    ],
+    correct: 0
+  },
+  {
+    text: "Where has Lucia gained field experience?",
+    answers: [
+      "In laboratories and classrooms",
+      "In an Antarctic research campaign",
+      "On an oceanographic cruise",
+      "All options are correct"
+    ],
+    correct: 3
+  },
+  {
+    text: "Which option best describes Lucia’s strengths and weaknesses?",
+    answers: [
+      "She is lazy but very confident.",
+      "She is highly motivated and curious, but sometimes feels overwhelmed.",
+      "She avoids challenges and prefers easy tasks.",
+      "She is disorganized and not interested in learning."
+    ],
+    correct: 1
+  }
+];
+
+let currentQuestion = 0;
+let timeLeft = 10;
+let timer;
+let score = 0;
+let correctCount = 0;
+
+function loadQuestion() {
+  let q = questions[currentQuestion];
+  document.getElementById("question").innerText = q.text;
+
+  let buttons = document.querySelectorAll(".answers button");
+  buttons.forEach((btn, index) => {
+    btn.innerText = q.answers[index];
+    btn.style.background = "#666";
+    btn.disabled = false;
+    btn.onclick = () => checkAnswer(index);
+  });
+
+  timeLeft = 10;
+  document.getElementById("time").innerText = timeLeft;
+
+  clearInterval(timer);
+  timer = setInterval(countdown, 1000);
+}
+
+function countdown() {
+  timeLeft--;
+  document.getElementById("time").innerText = timeLeft;
+
+  if (timeLeft <= 0) {
+    nextQuestion();
+  }
+}
+
+function checkAnswer(selected) {
+  clearInterval(timer);
+  let q = questions[currentQuestion];
+  let buttons = document.querySelectorAll(".answers button");
+
+  buttons.forEach((btn, index) => {
+    btn.disabled = true;
+    if (index === q.correct) btn.style.background = "green";
+    if (index === selected && index !== q.correct) btn.style.background = "red";
+  });
+
+  if (selected === q.correct) {
+    score += 20;
+    correctCount++;
+  }
+
+  setTimeout(nextQuestion, 1000);
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < questions.length) {
+    loadQuestion();
+  } else {
+    document.querySelector(".quiz-box").innerHTML = `
+      <h2>Quiz finished 🎉</h2>
+      <p>Correct answers: ${correctCount} / ${questions.length}</p>
+      <p>Score: ${score} / 100</p>
+    `;
+  }
+}
+
+loadQuestion();
+</script>
+
 </body>
 </html>
