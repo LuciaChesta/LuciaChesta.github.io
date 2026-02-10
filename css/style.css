@@ -361,17 +361,17 @@ footer h1 {
 /* =========================
    ANIMACIÓN BALLENA GIF - UNA VEZ
    ========================= */
-.whale {
+/* .whale {
     position: fixed;
     top: 80%;              /* altura de la ballena */
-    left: -250px;           /* empieza fuera de pantalla a la izquierda */
-    width: 250px;           /* tamaño del GIF */
-    z-index: 9999;
+  /*  left: -250px;           /* empieza fuera de pantalla a la izquierda */
+ /*   width: 250px;           /* tamaño del GIF */
+/*    z-index: 9999;
     transform: scaleX(-1); 
     animation: swim-once 90s linear forwards; /* nada una vez, termina en la derecha */
-}
+/*}
 
 @keyframes swim-once {
     0% { left: -250px; }
     100% { left: 100vw; } /* termina completamente fuera de pantalla a la derecha */
-}
+}/*
