@@ -87,36 +87,13 @@
             background: #218838;
         }
 
-        /* Botón de reinicio */
-        #restart-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            padding: 8px 12px;
-            font-size: 14px;
-            border: none;
-            border-radius: 10px;
-            background: #dc3545;
-            color: white;
-            cursor: pointer;
-            display: none; /* solo se muestra al final */
-        }
-
-        #restart-btn:hover {
-            background: #c82333;
-        }
-
-        /* Botón circular de reinicio al final */
+        /* Botón de reinicio final */
         #final-restart-btn {
             display: none;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 25px;
             background: #28a745;
             color: white;
             border: none;
@@ -130,8 +107,6 @@
 </head>
 <body>
     <div class="quiz-box">
-        <!-- Botón de reinicio superior -->
-        <button id="restart-btn">Restart</button>
 
         <!-- Pantalla de inicio -->
         <div id="start-screen">
@@ -150,10 +125,11 @@
                 <button></button>
                 <button></button>
             </div>
+
+            <!-- Botón final de restart, debajo de todo -->
+            <button id="final-restart-btn">Restart ↻</button>
         </div>
 
-        <!-- Botón circular de reinicio al final -->
-        <button id="final-restart-btn">↻</button>
     </div>
 
     <script src="quiz.js"></script>
