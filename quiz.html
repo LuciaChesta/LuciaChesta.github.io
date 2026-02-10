@@ -1,87 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Lucia Quiz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tipografía -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+<meta charset="UTF-8">
+<title>Lucia Quiz</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .quiz-box {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-      max-width: 600px;
-      width: 90%;
-      text-align: center;
-    }
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    #question {
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
+.quiz-box {
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 15px;
+  width: 500px;
+  text-align: center;
+  position: relative;
+}
 
-    .answers {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+.timer {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+}
 
-    .answers button {
-      padding: 12px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      background: #666;
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
 
-    .answers button:hover {
-      background: #444;
-    }
+.answers button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #666;
+  color: white;
+  cursor: pointer;
+}
 
-    #time {
-      font-weight: bold;
-    }
-
-    @media only screen and (max-width: 480px) {
-      #question {
-        font-size: 18px;
-      }
-      .answers button {
-        font-size: 14px;
-      }
-    }
-  </style>
+.answers button:hover {
+  background: #444;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="quiz-box">
-    <h2 id="question">Question goes here</h2>
-    <div class="answers">
-      <button></button>
-      <button></button>
-      <button></button>
-      <button></button>
-    </div>
-    <p>Time left: <span id="time">10</span> seconds</p>
-  </div>
+<div class="quiz-box">
+  <div class="timer">⏳ <span id="time">10</span></div>
+  <h2 id="question">Question 1</h2>
 
-  <!-- Tu quiz.js -->
-  <script src="quiz.js"></script>
+  <div class="answers">
+    <button onclick="answer()">Answer 1</button>
+    <button onclick="answer()">Answer 2</button>
+    <button onclick="answer()">Answer 3</button>
+    <button onclick="answer()">Answer 4</button>
+  </div>
+</div>
+
+<script src="quiz.js"></script>
 </body>
 </html>
