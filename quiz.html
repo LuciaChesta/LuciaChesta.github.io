@@ -6,43 +6,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {
+/* =====================
+   BODY Y FONDO
+   ===================== */
+body{
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: url("images/FKt251206-20251229-ROVRecover-VallejoPrut-7512.JPG") no-repeat center center;
-  background-size: cover; /* hace que la imagen cubra toda la pantalla */
-  font-family: Arial, sans-serif;
-  margin: 0;
+  
+  /* Imagen de fondo */
+  background: url("images/Fondo  paisaje.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
+/* =====================
+   QUIZ BOX
+   ===================== */
 .quiz-box {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.85); /* más transparente */
   padding: 30px;
   border-radius: 15px;
   width: 500px;
   text-align: center;
   position: relative;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.quiz-box.highlight {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* TIMER Y SCORE */
 .timer, .score {
   position: absolute;
   font-size: 18px;
   font-weight: bold;
 }
 
-.timer {
-  top: 10px;
-  right: 15px;
-}
+.timer { top: 10px; right: 15px; }
+.score { top: 10px; left: 15px; }
 
-.score {
-  top: 10px;
-  left: 15px;
-}
-
+/* BOTONES DE RESPUESTA */
 .answers {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -54,7 +63,7 @@ body {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background: #666;
+  background: rgba(0,123,255,0.8); /* azul más intenso */
   color: white;
   cursor: pointer;
   font-size: 14px;
@@ -62,10 +71,15 @@ body {
 }
 
 .answers button:hover {
-  background: #444;
+  background: rgba(0,123,255,1);
+  transform: scale(1.05);
 }
 
-/* Pantalla de inicio */
+.answers button.selected {
+  transform: scale(1.1);
+}
+
+/* PANTALLA DE INICIO */
 #start-screen {
   display: flex;
   flex-direction: column;
@@ -93,13 +107,13 @@ body {
 <body>
 
 <div class="quiz-box">
-  <!-- Pantalla de inicio -->
+  <!-- PANTALLA DE INICIO -->
   <div id="start-screen">
     <h2>Welcome to Lucia's Quiz! 🎉</h2>
     <button id="start-btn">Start Quiz</button>
   </div>
 
-  <!-- Contenido del quiz -->
+  <!-- CONTENIDO DEL QUIZ -->
   <div id="quiz-content" style="display:none;">
     <div class="score">Score: <span id="score">0</span></div>
     <div class="timer">⏳ <span id="time">20</span></div>
@@ -115,6 +129,10 @@ body {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+  const quizBox = document.querySelector(".quiz-box");
+
+  // Preguntas
   let questions = [
     { text: "Where did Lucia study Oceanography?", answers: ["Stanford University","Fudan University","University of Buenos Aires","National University of the South"], correct: 2 },
     { text: "What does Lucia like to do in her free time?", answers: ["Read","Do sports","Learn about new things","All options are correct"], correct: 3 },
@@ -137,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionEl = document.getElementById("question");
   const buttons = document.querySelectorAll(".answers button");
 
-  // Función para iniciar el quiz
+  // INICIAR QUIZ
   startBtn.onclick = () => {
     startScreen.style.display = "none";
     quizContent.style.display = "block";
@@ -145,13 +163,17 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function loadQuestion() {
+    quizBox.classList.add("highlight"); // efecto de resalte
+    setTimeout(() => quizBox.classList.remove("highlight"), 300);
+
     let q = questions[currentQuestion];
     questionEl.innerText = q.text;
 
     buttons.forEach((btn,index) => {
       btn.innerText = q.answers[index];
-      btn.style.background = "#666";
+      btn.style.background = "rgba(0,123,255,0.8)"; // azul
       btn.disabled = false;
+      btn.classList.remove("selected");
       btn.onclick = () => checkAnswer(index);
     });
 
@@ -166,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function countdown() {
     timeLeft--;
     timeDisplay.innerText = timeLeft;
-    if(timeLeft <= 0) nextQuestion();
+    if(timeLeft <=0) nextQuestion();
   }
 
   function checkAnswer(selected){
@@ -177,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.disabled = true;
       if(index === q.correct) btn.style.background = "green";
       if(index === selected && index !== q.correct) btn.style.background = "red";
+      if(index === selected) btn.classList.add("selected");
     });
 
     if(selected === q.correct){
@@ -193,10 +216,17 @@ document.addEventListener("DOMContentLoaded", () => {
     currentQuestion++;
     if(currentQuestion < questions.length) loadQuestion();
     else{
+      let message = "";
+      if(correctCount === 5) message = "Congratulations! You already know Lucia Chesta well.";
+      else if(correctCount === 4) message = "Well done! You know Lucia Chesta quite well.";
+      else if(correctCount === 3) message = "You can still learn more about Lucia Chesta.";
+      else if(correctCount <= 2) message = "I recommend checking Lucia's CV and LinkedIn to know her better :)";
+
       quizContent.innerHTML = `
         <h2>Quiz finished 🎉</h2>
         <p>Correct answers: ${correctCount} / ${questions.length}</p>
         <p>Final Score: ${score} / 100</p>
+        <p><strong>${message}</strong></p>
       `;
     }
   }
@@ -207,9 +237,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </body>
 </html>
 
-
-
-</script>
-
-</body>
 </html>
