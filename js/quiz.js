@@ -1,3 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lucia Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #f5f5f5; /* mismo fondo que antes */
+  font-family: Arial, sans-serif;
+}
+
+.quiz-box {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 15px;
+  width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.timer, .score {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.timer {
+  top: 10px;
+  right: 15px;
+}
+
+.score {
+  top: 10px;
+  left: 15px;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.answers button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #666;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.answers button:hover {
+  background: #444;
+}
+
+#start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#start-screen button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#start-screen button:hover {
+  background: #218838;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <!-- Pantalla de inicio -->
+  <div id="start-screen">
+    <h2>Welcome to Lucia's Quiz! 🎉</h2>
+    <button id="start-btn">Start Quiz</button>
+  </div>
+
+  <!-- Contenido del quiz -->
+  <div id="quiz-content" style="display:none;">
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="timer">⏳ <span id="time">20</span></div>
+    <h2 id="question"></h2>
+    <div class="answers">
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+  </div>
+</div>
+
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
   let questions = [
@@ -54,10 +168,20 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   let currentQuestion = 0;
-  let timeLeft = 10;
+  let timeLeft = 20;
   let timer;
   let score = 0;
   let correctCount = 0;
+
+  const startBtn = document.getElementById("start-btn");
+  const startScreen = document.getElementById("start-screen");
+  const quizContent = document.getElementById("quiz-content");
+
+  startBtn.onclick = () => {
+    startScreen.style.display = "none";
+    quizContent.style.display = "block";
+    loadQuestion();
+  };
 
   function loadQuestion() {
     let q = questions[currentQuestion];
@@ -72,11 +196,13 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.onclick = () => checkAnswer(index);
     });
 
-    timeLeft = 10;
+    timeLeft = 20;
     document.getElementById("time").innerText = timeLeft;
 
     clearInterval(timer);
     timer = setInterval(countdown, 1000);
+
+    document.getElementById("score").innerText = score;
   }
 
   function countdown() {
@@ -105,6 +231,8 @@ document.addEventListener("DOMContentLoaded", () => {
       correctCount++;
     }
 
+    document.getElementById("score").innerText = score;
+
     setTimeout(nextQuestion, 1000);
   }
 
@@ -114,15 +242,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentQuestion < questions.length) {
       loadQuestion();
     } else {
-      document.querySelector(".quiz-box").innerHTML = `
+      quizContent.innerHTML = `
         <h2>Quiz finished 🎉</h2>
         <p>Correct answers: ${correctCount} / ${questions.length}</p>
-        <p>Score: ${score} / 100</p>
+        <p>Final Score: ${score} / 100</p>
       `;
     }
   }
 
-  // Inicializa el quiz
-  loadQuestion();
-
 });
+</script>
+
+</body>
+</html>
