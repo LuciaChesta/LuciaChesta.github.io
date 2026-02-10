@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionEl = document.getElementById("question");
   const buttons = document.querySelectorAll(".answers button");
 
-  // --- NUEVO: crear botón de restart al final ---
+  // --- botón restart final ---
   const finalRestartBtn = document.createElement("button");
   finalRestartBtn.id = "final-restart-btn";
   finalRestartBtn.innerText = "Restart ↻";
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
   finalRestartBtn.addEventListener("click", () => {
     resetQuiz();
   });
-  // --- FIN DE LA PARTE NUEVA ---
 
   startBtn.onclick = () => {
     startScreen.style.display = "none";
@@ -51,13 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function loadQuestion() {
-    quizBox.classList.add("highlight"); // efecto de resalte
+    quizBox.classList.add("highlight");
     setTimeout(() => quizBox.classList.remove("highlight"), 300);
 
     let q = questions[currentQuestion];
     questionEl.innerText = q.text;
 
-    buttons.forEach((btn,index) => {
+    buttons.forEach((btn, index) => {
       btn.innerText = q.answers[index];
       btn.style.background = "#666";
       btn.disabled = false;
@@ -76,14 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function countdown() {
     timeLeft--;
     timeDisplay.innerText = timeLeft;
-    if(timeLeft <=0) nextQuestion();
+    if(timeLeft <= 0) nextQuestion();
   }
 
-  function checkAnswer(selected){
+  function checkAnswer(selected) {
     clearInterval(timer);
     let q = questions[currentQuestion];
 
-    buttons.forEach((btn,index)=>{
+    buttons.forEach((btn, index) => {
       btn.disabled = true;
       if(index === q.correct) btn.style.background = "green";
       if(index === selected && index !== q.correct) btn.style.background = "red";
@@ -97,26 +96,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     scoreDisplay.innerText = score;
 
-    setTimeout(nextQuestion,1000);
+    setTimeout(nextQuestion, 1000);
   }
 
-  function nextQuestion(){
+  function nextQuestion() {
     currentQuestion++;
-    if(currentQuestion < questions.length) loadQuestion();
-    else{
-      quizContent.innerHTML = `
+    if(currentQuestion < questions.length) {
+      loadQuestion();
+    } else {
+      // mostrar resultados sin borrar el botón
+      const resultsHTML = `
         <h2>Quiz finished 🎉</h2>
         <p>Correct answers: ${correctCount} / ${questions.length}</p>
         <p>Final Score: ${score} / 100</p>
       `;
-      // --- Mostrar botón de restart al final ---
-      quizContent.appendChild(finalRestartBtn);
+      questionEl.innerHTML = resultsHTML;
+      buttons.forEach(btn => btn.style.display = "none");
       finalRestartBtn.style.display = "inline-block";
-      // --- Fin de botón final ---
     }
   }
 
-  // --- función para reiniciar el quiz ---
   function resetQuiz() {
     currentQuestion = 0;
     score = 0;
@@ -131,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.style.background = "#666";
       btn.disabled = false;
       btn.classList.remove("selected");
+      btn.style.display = "inline-block";
     });
   }
 
