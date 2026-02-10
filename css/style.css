@@ -280,31 +280,48 @@ footer h1 {
    QUIZ SECTION
    ========================= */
 .quiz-section {
-  background: rgba(255,255,255,0.8);
+  background: rgba(0, 123, 255, 0.1); /* azul muy suave y semitransparente */
   padding: 50px 20px;
-  border-radius: 10px;
-  margin-bottom: 50px;
+  border-radius: 15px;
+  margin: 50px auto; /* centrado horizontal con margen superior e inferior */
+  max-width: 600px;  /* limita ancho para que no llegue a los bordes */
+  text-align: center; /* centra el texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .quiz-section h1 {
   color: #333;
   font-weight: 600;
+  margin-bottom: 30px; /* separación con las preguntas */
 }
 
-.quiz-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  border-radius: 25px;
-  border: 2px solid #666;
-  color: #666;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+.quiz-answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
 }
 
-.quiz-button:hover {
+.quiz-answers button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
   background: #666;
   color: white;
-  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%; /* para que ocupe todo el espacio del grid */
+}
+
+.quiz-answers button:hover {
+  background: #444;
+}
+
+.quiz-timer {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
 }
