@@ -14,9 +14,30 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <style>
+        /* Ballena animada */
+        .whale {
+            position: fixed;
+            bottom: 100px; /* altura sobre el fondo */
+            left: -200px;   /* empieza fuera de la pantalla */
+            width: 200px;   /* tamaño de la ballena */
+            animation: swim 15s linear infinite;
+            z-index: 0;     /* detrás del contenido */
+        }
+
+        @keyframes swim {
+            0% { left: -200px; transform: scaleX(1); }
+            50% { left: calc(100vw + 200px); transform: scaleX(1); }
+            51% { transform: scaleX(-1); } /* gira para volver */
+            100% { left: -200px; transform: scaleX(-1); }
+        }
+    </style>
 </head>
 
 <body>
+
+<!-- Ballena animada -->
+<img src="images/whale.png" alt="Whale" class="whale">
 
 <header>
     <div class="container">
