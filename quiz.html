@@ -11,13 +11,13 @@
             align-items: center;
             height: 100vh;
             background: url("images/FKt251206-20260104-RV_FalkorToo_Aerial_SunSet_Atlantic-VallejoPrut-0538.JPG") no-repeat center center;
-            background-size: cover; /* hace que la imagen cubra toda la pantalla */
+            background-size: cover;
             font-family: Arial, sans-serif;
             margin: 0;
         }
 
         .quiz-box {
-            background: rgba(255,255,255,0.85); /* más transparente */
+            background: rgba(255,255,255,0.85);
             padding: 30px;
             border-radius: 15px;
             width: 500px;
@@ -53,7 +53,7 @@
             padding: 12px;
             border-radius: 10px;
             border: none;
-            background: #4a90e2; /* azul */
+            background: #4a90e2;
             color: white;
             cursor: pointer;
             font-size: 14px;
@@ -61,7 +61,7 @@
         }
 
         .answers button:hover {
-            background: #357ABD; /* azul más oscuro */
+            background: #357ABD;
         }
 
         /* Pantalla de inicio */
@@ -86,10 +86,32 @@
         #start-screen button:hover {
             background: #218838;
         }
+
+        /* Botón de reinicio */
+        #restart-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #dc3545;
+            color: white;
+            cursor: pointer;
+            display: none; /* solo se muestra al final */
+        }
+
+        #restart-btn:hover {
+            background: #c82333;
+        }
     </style>
 </head>
 <body>
     <div class="quiz-box">
+        <!-- Botón de reinicio -->
+        <button id="restart-btn">Restart</button>
+
         <!-- Pantalla de inicio -->
         <div id="start-screen">
             <h2>Welcome to Lucia's Quiz! 🎉</h2>
@@ -120,13 +142,10 @@
                 { text: "Which option best describes Lucia’s strengths and weaknesses?", answers: ["She is lazy but very confident.","She is highly motivated and curious, but sometimes feels overwhelmed.","She avoids challenges and prefers easy tasks.","She is disorganized and not interested in learning."], correct: 1 }
             ];
 
-            let currentQuestion = 0;
-            let timeLeft = 20;
-            let timer;
-            let score = 0;
-            let correctCount = 0;
+            let currentQuestion, timeLeft, timer, score, correctCount;
 
             const startBtn = document.getElementById("start-btn");
+            const restartBtn = document.getElementById("restart-btn");
             const startScreen = document.getElementById("start-screen");
             const quizContent = document.getElementById("quiz-content");
             const scoreDisplay = document.getElementById("score");
@@ -134,11 +153,26 @@
             const questionEl = document.getElementById("question");
             const buttons = document.querySelectorAll(".answers button");
 
-            // Función para iniciar el quiz
+            function resetQuiz() {
+                currentQuestion = 0;
+                score = 0;
+                correctCount = 0;
+                timeLeft = 20;
+                startScreen.style.display = "flex";
+                quizContent.style.display = "none";
+                restartBtn.style.display = "none";
+            }
+
             startBtn.onclick = () => {
                 startScreen.style.display = "none";
                 quizContent.style.display = "block";
+                restartBtn.style.display = "block";
                 loadQuestion();
+            };
+
+            restartBtn.onclick = () => {
+                clearInterval(timer);
+                resetQuiz();
             };
 
             function loadQuestion() {
@@ -146,7 +180,7 @@
                 questionEl.innerText = q.text;
                 buttons.forEach((btn,index) => {
                     btn.innerText = q.answers[index];
-                    btn.style.background = "#4a90e2"; // azul
+                    btn.style.background = "#4a90e2";
                     btn.disabled = false;
                     btn.onclick = () => checkAnswer(index);
                 });
@@ -198,8 +232,12 @@
                         <p>Final Score: ${score} / 100</p>
                         <p><strong>${finalMessage}</strong></p>
                     `;
+                    restartBtn.style.display = "block";
                 }
             }
+
+            // Inicializar
+            resetQuiz();
         });
     </script>
 </body>
