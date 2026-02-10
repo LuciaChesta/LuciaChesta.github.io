@@ -7,48 +7,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eeeeee; /* puedes cambiar el color de fondo aquí */
+    font-family: 'Open Sans', sans-serif;
+  }
 
-.quiz-box {
-  background: rgba(255,255,255,0.85);
-  padding: 30px;
-  border-radius: 15px;
-  width: 500px;
-  text-align: center;
-  position: relative;
-}
+  .quiz-box {
+    background: rgba(255,255,255,0.85);
+    padding: 30px;
+    border-radius: 15px;
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
 
-.timer {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 18px;
-}
+  .timer {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+  }
 
-.answers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
-}
+  h2#question {
+    margin-bottom: 25px;
+  }
 
-.answers button {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: #666;
-  color: white;
-  cursor: pointer;
-}
+  .answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
 
-.answers button:hover {
-  background: #444;
-}
+  .answers button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #666;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+
+  .answers button:hover {
+    background: #444;
+  }
 </style>
 </head>
 
@@ -59,10 +69,10 @@ body {
   <h2 id="question">Question 1</h2>
 
   <div class="answers">
-    <button onclick="answer()">Answer 1</button>
-    <button onclick="answer()">Answer 2</button>
-    <button onclick="answer()">Answer 3</button>
-    <button onclick="answer()">Answer 4</button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
   </div>
 </div>
 
