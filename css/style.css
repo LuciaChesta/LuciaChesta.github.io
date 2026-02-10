@@ -280,7 +280,7 @@ footer h1 {
    QUIZ SECTION
    ========================= */
 .quiz-section {
-  background: rgba(0, 123, 255, 0.2); /* azul suave y semitransparente */
+  background: rgba(0, 123, 255, 0.6); /* azul suave y semitransparente */
   padding: 50px 20px;
   border-radius: 15px;
   margin: 50px auto;      /* centrado horizontal y margen arriba/abajo */
