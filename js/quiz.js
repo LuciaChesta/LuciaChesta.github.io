@@ -94,12 +94,8 @@ function checkAnswer(selected) {
 
   buttons.forEach((btn, index) => {
     btn.disabled = true;
-    if (index === q.correct) {
-      btn.style.background = "green";
-    }
-    if (index === selected && index !== q.correct) {
-      btn.style.background = "red";
-    }
+    if (index === q.correct) btn.style.background = "green";
+    if (index === selected && index !== q.correct) btn.style.background = "red";
   });
 
   if (selected === q.correct) {
@@ -124,4 +120,5 @@ function nextQuestion() {
   }
 }
 
+// Inicializa el quiz
 loadQuestion();
