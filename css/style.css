@@ -367,7 +367,7 @@ footer h1 {
     right: -250px;          /* empieza fuera de pantalla */
     width: 250px;           /* tamaño del GIF */
     z-index: 9999;
-    transform: scaleX(-1);  /* gira horizontalmente */
+    /* quitamos el scaleX */
     animation: swim-once 30s linear forwards; /* solo una vez */
 }
 
