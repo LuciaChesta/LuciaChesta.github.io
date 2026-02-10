@@ -35,11 +35,11 @@ body::before {
 
 .botonera li a {
     color: #666;
-    padding: 8px 18px;
-    border: 2px solid #666;
-    border-radius: 25px;
+    padding: 8px 18px;       /* tamaño del botón */
+    border: 2px solid #666;  /* recuadro */
+    border-radius: 25px;     /* forma ovalada */
     text-decoration: none;
-    font-size: 15px;
+    font-size: 15px;         /* tamaño letra */
     font-weight: 600;
     transition: all 0.3s ease;
 }
@@ -164,7 +164,7 @@ footer h1 {
 
 /* Evita que el header tape las secciones al hacer scroll */
 #about, #fields, #contact {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 90px; /* Ajusta según altura de tu header */
 }
 
 /* MEDIA QUERY */
@@ -215,7 +215,7 @@ footer h1 {
    CARRUSELES
    ========================= */
 #carousel-section, #carousel-section-2 {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.8); /* Fondo semitransparente */
     padding: 50px 0;
     border-radius: 10px;
 }
@@ -250,7 +250,7 @@ footer h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 20px; /* espacio entre fotos */
 }
 
 .mySwiper .swiper-slide img, .mySwiper2 .swiper-slide img {
@@ -261,35 +261,35 @@ footer h1 {
     border-radius: 10px;
 }
 
-/* FLECHAS CARRUSEL */
+/* FLECHAS CARRUSEL - PARTE TRANSPARENTE MUY GRANDE */
 .swiper-button-next, .swiper-button-prev {
-    width: 200px;
+    width: 200px; /* recuadro más grande */
     height: 200px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 20px;
+    background: rgba(255,255,255,0.3); /* transparente */
+    border-radius: 20px;               /* bordes redondeados */
     top: 50%;
     transform: translateY(-50%);
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
     font-size: 20px;
-    color: black;
+    color: black; /* flecha negra */
 }
 
 /* =========================
    QUIZ SECTION
    ========================= */
 .quiz-section {
-  background: rgba(0, 123, 255, 0.6);
+  background: rgba(0, 123, 255, 0.6); /* azul suave y semitransparente */
   padding: 50px 20px;
   border-radius: 15px;
-  margin: 50px auto;
-  max-width: 900px;
+  margin: 50px auto;      /* centrado horizontal y margen arriba/abajo */
+  max-width: 900px;        /* ancho similar al carrusel */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: white;            /* texto blanco */
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
@@ -309,9 +309,9 @@ footer h1 {
 
 .quiz-answers button {
   padding: 15px;
-  border-radius: 25px;
+  border-radius: 25px;    /* botones ovalados */
   border: none;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.2); /* semitransparente para destacar el azul */
   color: white;
   cursor: pointer;
   font-size: 16px;
@@ -338,11 +338,12 @@ footer h1 {
   font-weight: 600;
 }
 
+/* BOTON "TAKE THE QUIZ" */
 .quiz-button {
   display: inline-block;
   margin-top: 30px;
   padding: 12px 35px;
-  border-radius: 25px;
+  border-radius: 25px;       /* ovalado */
   border: 2px solid white;
   background: rgba(255,255,255,0.2);
   color: white;
@@ -354,24 +355,6 @@ footer h1 {
 
 .quiz-button:hover {
   background: white;
-  color: #007bff;
+  color: #007bff;            /* azul carrusel */
   text-decoration: none;
-}
-
-/* =========================
-   ANIMACIÓN BALLENA GIF - UNA VEZ
-   ========================= */
-/* .whale {
-    position: fixed;
-    top: 80%;              /* altura de la ballena */
-  /*  left: -250px;           /* empieza fuera de pantalla a la izquierda */
- /*   width: 250px;           /* tamaño del GIF */
-/*    z-index: 9999;
-    transform: scaleX(-1); 
-    animation: swim-once 90s linear forwards; /* nada una vez, termina en la derecha */
-/*}
-
-@keyframes swim-once {
-    0% { left: -250px; }
-    100% { left: 100vw; } /* termina completamente fuera de pantalla a la derecha */
 }/*
