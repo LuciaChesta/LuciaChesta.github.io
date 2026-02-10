@@ -1,28 +1,53 @@
 let questions = [
   {
-    text: "Question 1",
-    answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-    correct: 0
-  },
-  {
-    text: "Question 2",
-    answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-    correct: 1
-  },
-  {
-    text: "Question 3",
-    answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-    correct: 2
-  },
-  {
-    text: "Question 4",
-    answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+    text: "Where did Lucia study Oceanography?",
+    answers: [
+      "Stanford University",
+      "Fudan University",
+      "University of Buenos Aires",
+      "National University of the South"
+    ],
     correct: 3
   },
   {
-    text: "Question 5",
-    answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-    correct: 0
+    text: "What does Lucia like to do in her free time?",
+    answers: [
+      "Read",
+      "Do sports",
+      "Learn about new things",
+      "All options are correct"
+    ],
+    correct: 4
+  },
+  {
+    text: "What best describes Lucia’s professional profile?",
+    answers: [
+      "She enjoys working on challenging tasks that push her to grow every day.",
+      "She is interested in fashion design",
+      "She prefers working alone and avoids challenges",
+      "She wants to work only in offices"
+    ],
+    correct: 1
+  },
+  {
+    text: "Where has Lucia gained field experience?",
+    answers: [
+      "In laboratories and classrooms",
+      "In an Antarctic research campaign",
+      "On an oceanographic cruise",
+      "All options are correct"
+    ],
+    correct: 4
+  },
+  {
+    text: "Which option best describes Lucia’s strengths and weaknesses?",
+    answers: [
+      "She is lazy but very confident.",
+      "She is highly motivated and curious, but sometimes feels overwhelmed.",
+      "She avoids challenges and prefers easy tasks.",
+      "She is disorganized and not interested in learning."
+    ],
+    correct: 2
   }
 ];
 
