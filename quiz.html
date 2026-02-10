@@ -88,31 +88,27 @@ body {
   background: #218838;
 }
 
-/* Botón de reinicio */
+/* Botón de reinicio al final */
 #restart-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  padding: 8px 12px;
-  font-size: 14px;
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
-  border-radius: 10px;
-  background: #dc3545;
+  border-radius: 12px;
+  background: #28a745;
   color: white;
   cursor: pointer;
   display: none; /* solo se muestra al final */
+  margin-top: 20px;
 }
 
 #restart-btn:hover {
-  background: #c82333;
+  background: #218838;
 }
 </style>
 </head>
 <body>
 
 <div class="quiz-box">
-  <!-- Botón de reinicio -->
-  <button id="restart-btn">Restart</button>
 
   <!-- Pantalla de inicio -->
   <div id="start-screen">
@@ -131,7 +127,10 @@ body {
       <button></button>
       <button></button>
     </div>
+    <!-- Botón de reinicio al final del quiz -->
+    <button id="restart-btn">Restart</button>
   </div>
+
 </div>
 
 <script>
@@ -235,7 +234,21 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Final Score: ${score} / 100</p>
         <p><strong>${finalMessage}</strong></p>
       `;
-      restartBtn.style.display = "block"; // mostrar al final
+      // Crear botón restart al final
+      const btn = document.createElement("button");
+      btn.innerText = "Restart";
+      btn.id = "restart-btn";
+      btn.style.background = "#28a745";
+      btn.style.color = "white";
+      btn.style.padding = "12px 25px";
+      btn.style.border = "none";
+      btn.style.borderRadius = "12px";
+      btn.style.cursor = "pointer";
+      btn.style.marginTop = "20px";
+      btn.onclick = () => {
+        resetQuiz();
+      };
+      quizContent.appendChild(btn);
     }
   }
 
