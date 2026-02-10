@@ -358,3 +358,20 @@ footer h1 {
   color: #007bff;            /* azul carrusel */
   text-decoration: none;
 }
+
+/* =========================
+   ANIMACIÓN BALLENA GIF
+   ========================= */
+.whale {
+    position: fixed;
+    top: 20%;               /* altura de la ballena */
+    right: -250px;          /* empieza fuera de pantalla */
+    width: 250px;           /* tamaño del GIF */
+    z-index: 9999;          /* sobre todo */
+    animation: swim 20s linear infinite;
+}
+
+@keyframes swim {
+    0% { right: -250px; }
+    100% { right: 100vw; }
+}
