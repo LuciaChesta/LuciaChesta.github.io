@@ -363,15 +363,15 @@ footer h1 {
    ========================= */
 .whale {
     position: fixed;
-    top: 20%;               /* altura de la ballena */
-    right: -250px;          /* empieza fuera de pantalla */
+    top: 70%;               /* altura de la ballena */
+    right: 250px;          /* empieza fuera de pantalla */
     width: 250px;           /* tamaño del GIF */
     z-index: 9999;
     /* quitamos el scaleX */
-    animation: swim-once 30s linear forwards; /* solo una vez */
+    animation: swim-once 10s linear forwards; /* solo una vez */
 }
 
 @keyframes swim-once {
-    0% { right: -250px; }
+    0% { right: 250px; }
     100% { right: 100vw; } /* se mueve hasta salir a la izquierda */
 }
