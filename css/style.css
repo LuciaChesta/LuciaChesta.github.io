@@ -275,3 +275,36 @@ footer h1{
   font-size: 20px;
   color: black; /* flecha negra */
 }
+
+/* =========================
+   QUIZ SECTION
+   ========================= */
+.quiz-section {
+  background: rgba(255,255,255,0.8);
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.quiz-section h1 {
+  color: #333;
+  font-weight: 600;
+}
+
+.quiz-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: 2px solid #666;
+  color: #666;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.quiz-button:hover {
+  background: #666;
+  color: white;
+  text-decoration: none;
+}
