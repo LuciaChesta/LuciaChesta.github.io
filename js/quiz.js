@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionEl = document.getElementById("question");
   const buttons = document.querySelectorAll(".answers button");
 
-  // Crear botón de reinicio al final del quiz
+  // --- NUEVO: crear botón de restart al final ---
   const finalRestartBtn = document.createElement("button");
   finalRestartBtn.id = "final-restart-btn";
   finalRestartBtn.innerText = "Restart ↻";
@@ -42,25 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   finalRestartBtn.addEventListener("click", () => {
     resetQuiz();
   });
-
-  function resetQuiz() {
-    currentQuestion = 0;
-    score = 0;
-    correctCount = 0;
-    timeLeft = 20;
-
-    startScreen.style.display = "flex";
-    quizContent.style.display = "none";
-
-    finalRestartBtn.style.display = "none";
-
-    // Restaurar botones de respuestas
-    buttons.forEach(btn => {
-      btn.style.background = "#666";
-      btn.disabled = false;
-      btn.classList.remove("selected");
-    });
-  }
+  // --- FIN DE LA PARTE NUEVA ---
 
   startBtn.onclick = () => {
     startScreen.style.display = "none";
@@ -69,13 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function loadQuestion() {
-    quizBox.classList.add("highlight");
+    quizBox.classList.add("highlight"); // efecto de resalte
     setTimeout(() => quizBox.classList.remove("highlight"), 300);
 
     let q = questions[currentQuestion];
     questionEl.innerText = q.text;
 
-    buttons.forEach((btn, index) => {
+    buttons.forEach((btn,index) => {
       btn.innerText = q.answers[index];
       btn.style.background = "#666";
       btn.disabled = false;
@@ -120,22 +102,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function nextQuestion(){
     currentQuestion++;
-    if(currentQuestion < questions.length) {
-      loadQuestion();
-    } else {
+    if(currentQuestion < questions.length) loadQuestion();
+    else{
       quizContent.innerHTML = `
         <h2>Quiz finished 🎉</h2>
         <p>Correct answers: ${correctCount} / ${questions.length}</p>
         <p>Final Score: ${score} / 100</p>
       `;
-      // Añadir botón de restart al final
+      // --- Mostrar botón de restart al final ---
       quizContent.appendChild(finalRestartBtn);
       finalRestartBtn.style.display = "inline-block";
+      // --- Fin de botón final ---
     }
   }
 
-  // Inicializar
-  resetQuiz();
+  // --- función para reiniciar el quiz ---
+  function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    correctCount = 0;
+    timeLeft = 20;
+
+    startScreen.style.display = "flex";
+    quizContent.style.display = "none";
+    finalRestartBtn.style.display = "none";
+
+    buttons.forEach(btn => {
+      btn.style.background = "#666";
+      btn.disabled = false;
+      btn.classList.remove("selected");
+    });
+  }
 
 });
-/html>
