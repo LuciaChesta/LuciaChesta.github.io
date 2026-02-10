@@ -1,128 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Lucia Quiz</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background: #f5f5f5; /* mismo fondo que antes */
-  font-family: Arial, sans-serif;
-}
-
-.quiz-box {
-  background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 15px;
-  width: 500px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.quiz-box.highlight {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
-
-.timer, .score {
-  position: absolute;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.timer {
-  top: 10px;
-  right: 15px;
-}
-
-.score {
-  top: 10px;
-  left: 15px;
-}
-
-.answers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.answers button {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: #666;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.answers button:hover {
-  background: #444;
-  transform: scale(1.05);
-}
-
-.answers button.selected {
-  transform: scale(1.1);
-}
-
-#start-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#start-screen button {
-  padding: 15px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 12px;
-  background: #28a745;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#start-screen button:hover {
-  background: #218838;
-}
-</style>
-</head>
-
-<body>
-
-<div class="quiz-box">
-  <!-- Pantalla de inicio -->
-  <div id="start-screen">
-    <h2>Welcome to Lucia's Quiz! 🎉</h2>
-    <button id="start-btn">Start Quiz</button>
-  </div>
-
-  <!-- Contenido del quiz -->
-  <div id="quiz-content" style="display:none;">
-    <div class="score">Score: <span id="score">0</span></div>
-    <div class="timer">⏳ <span id="time">20</span></div>
-    <h2 id="question"></h2>
-    <div class="answers">
-      <button></button>
-      <button></button>
-      <button></button>
-      <button></button>
-    </div>
-  </div>
-</div>
-
-<script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const quizBox = document.querySelector(".quiz-box");
@@ -149,6 +24,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionEl = document.getElementById("question");
   const buttons = document.querySelectorAll(".answers button");
 
+  // Crear botón de reinicio al final del quiz
+  const finalRestartBtn = document.createElement("button");
+  finalRestartBtn.id = "final-restart-btn";
+  finalRestartBtn.innerText = "Restart ↻";
+  finalRestartBtn.style.display = "none";
+  finalRestartBtn.style.marginTop = "20px";
+  finalRestartBtn.style.padding = "12px 25px";
+  finalRestartBtn.style.fontSize = "16px";
+  finalRestartBtn.style.borderRadius = "25px";
+  finalRestartBtn.style.background = "#28a745";
+  finalRestartBtn.style.color = "white";
+  finalRestartBtn.style.border = "none";
+  finalRestartBtn.style.cursor = "pointer";
+  quizContent.appendChild(finalRestartBtn);
+
+  finalRestartBtn.addEventListener("click", () => {
+    resetQuiz();
+  });
+
+  function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    correctCount = 0;
+    timeLeft = 20;
+
+    startScreen.style.display = "flex";
+    quizContent.style.display = "none";
+
+    finalRestartBtn.style.display = "none";
+
+    // Restaurar botones de respuestas
+    buttons.forEach(btn => {
+      btn.style.background = "#666";
+      btn.disabled = false;
+      btn.classList.remove("selected");
+    });
+  }
+
   startBtn.onclick = () => {
     startScreen.style.display = "none";
     quizContent.style.display = "block";
@@ -156,13 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function loadQuestion() {
-    quizBox.classList.add("highlight"); // efecto de resalte
+    quizBox.classList.add("highlight");
     setTimeout(() => quizBox.classList.remove("highlight"), 300);
 
     let q = questions[currentQuestion];
     questionEl.innerText = q.text;
 
-    buttons.forEach((btn,index) => {
+    buttons.forEach((btn, index) => {
       btn.innerText = q.answers[index];
       btn.style.background = "#666";
       btn.disabled = false;
@@ -207,18 +120,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function nextQuestion(){
     currentQuestion++;
-    if(currentQuestion < questions.length) loadQuestion();
-    else{
+    if(currentQuestion < questions.length) {
+      loadQuestion();
+    } else {
       quizContent.innerHTML = `
         <h2>Quiz finished 🎉</h2>
         <p>Correct answers: ${correctCount} / ${questions.length}</p>
         <p>Final Score: ${score} / 100</p>
       `;
+      // Añadir botón de restart al final
+      quizContent.appendChild(finalRestartBtn);
+      finalRestartBtn.style.display = "inline-block";
     }
   }
 
-});
-</script>
+  // Inicializar
+  resetQuiz();
 
-</body>
-</html>
+});
+/html>
