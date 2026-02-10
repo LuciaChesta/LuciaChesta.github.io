@@ -18,7 +18,7 @@ body {
 }
 
 .quiz-box {
-  background: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.65);
   padding: 30px;
   border-radius: 15px;
   width: 500px;
@@ -108,8 +108,8 @@ body {
 }
 </style>
 </head>
-
 <body>
+
 <div class="quiz-box">
   <!-- Botón de reinicio -->
   <button id="restart-btn">Restart</button>
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startBtn.onclick = () => {
     startScreen.style.display = "none";
     quizContent.style.display = "block";
-    restartBtn.style.display = "block";
+    restartBtn.style.display = "none"; // no mostrar hasta el final
     loadQuestion();
   };
 
@@ -181,18 +181,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadQuestion() {
     let q = questions[currentQuestion];
     questionEl.innerText = q.text;
-
     buttons.forEach((btn,index) => {
       btn.innerText = q.answers[index];
       btn.style.background = "#4a90e2";
       btn.disabled = false;
       btn.onclick = () => checkAnswer(index);
     });
-
     timeLeft = 20;
     timeDisplay.innerText = timeLeft;
     scoreDisplay.innerText = score;
-
     clearInterval(timer);
     timer = setInterval(countdown, 1000);
   }
@@ -206,18 +203,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkAnswer(selected){
     clearInterval(timer);
     let q = questions[currentQuestion];
-
     buttons.forEach((btn,index)=>{
       btn.disabled = true;
       if(index === q.correct) btn.style.background = "green";
       if(index === selected && index !== q.correct) btn.style.background = "red";
     });
-
     if(selected === q.correct){
       score += 20;
       correctCount++;
     }
-
     scoreDisplay.innerText = score;
     setTimeout(nextQuestion,1000);
   }
@@ -228,7 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
       loadQuestion();
     } else {
       let finalMessage = "";
-
       if(correctCount >= 4){
         finalMessage = "Congratulations! You already know Lucia Chesta very well.";
       } else if(correctCount === 3){
@@ -236,19 +229,17 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         finalMessage = "I recommend checking Lucia's CV and LinkedIn to get to know her better :)";
       }
-
       quizContent.innerHTML = `
         <h2>Quiz finished 🎉</h2>
         <p>Correct answers: ${correctCount} / ${questions.length}</p>
         <p>Final Score: ${score} / 100</p>
         <p><strong>${finalMessage}</strong></p>
       `;
-
-      restartBtn.style.display = "block";
+      restartBtn.style.display = "block"; // mostrar al final
     }
   }
 
-  // Inicializar
+  // Inicializar quiz
   resetQuiz();
 
 });
