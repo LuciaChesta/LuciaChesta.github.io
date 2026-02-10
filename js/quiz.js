@@ -7,7 +7,7 @@ let questions = [
       "University of Buenos Aires",
       "National University of the South"
     ],
-    correct: 3
+    correct: 2
   },
   {
     text: "What does Lucia like to do in her free time?",
@@ -17,7 +17,7 @@ let questions = [
       "Learn about new things",
       "All options are correct"
     ],
-    correct: 4
+    correct: 3
   },
   {
     text: "What best describes Lucia’s professional profile?",
@@ -27,7 +27,7 @@ let questions = [
       "She prefers working alone and avoids challenges",
       "She wants to work only in offices"
     ],
-    correct: 1
+    correct: 0
   },
   {
     text: "Where has Lucia gained field experience?",
@@ -37,7 +37,7 @@ let questions = [
       "On an oceanographic cruise",
       "All options are correct"
     ],
-    correct: 4
+    correct: 3
   },
   {
     text: "Which option best describes Lucia’s strengths and weaknesses?",
@@ -47,7 +47,7 @@ let questions = [
       "She avoids challenges and prefers easy tasks.",
       "She is disorganized and not interested in learning."
     ],
-    correct: 2
+    correct: 1
   }
 ];
 
