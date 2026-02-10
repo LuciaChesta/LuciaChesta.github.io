@@ -1,231 +1,310 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Lucia Quiz</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-/* =====================
-   BODY Y FONDO
-   ===================== */
-body{
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  /* Imagen de fondo */
-  background: url("images/Fondo  paisaje.jpg") no-repeat center center fixed;
-  background-size: cover;
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
 }
 
-/* =====================
-   QUIZ BOX
-   ===================== */
-.quiz-box {
-  background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 15px;
-  width: 500px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* BODY y FONDO */
+body {
+    background: #eeeeee;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.quiz-box.highlight {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+/* Imagen fija de fondo para todo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/Fondo paisaje.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
 }
 
-/* TIMER Y SCORE */
-.timer, .score {
-  position: absolute;
-  font-size: 18px;
-  font-weight: bold;
+/* HEADER */
+.logo {
+    width: 40px;
 }
 
-.timer { top: 10px; right: 15px; }
-.score { top: 10px; left: 15px; }
-
-/* BOTONES DE RESPUESTA */
-.answers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
+/* BOTONES SUPERIORES (menu) */
+.botonera li {
+    display: inline-block;
+    margin-left: 8px;
 }
 
-.answers button {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: #666;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
+.botonera li a {
+    color: #666;
+    padding: 8px 18px;       /* tamaño del botón */
+    border: 2px solid #666;  /* recuadro */
+    border-radius: 25px;     /* forma ovalada */
+    text-decoration: none;
+    font-size: 15px;         /* tamaño letra */
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.answers button:hover {
-  background: #444;
-  transform: scale(1.05);
+.botonera li a:hover {
+    color: white;
+    background: #666;
+    text-decoration: none;
 }
 
-.answers button.selected {
-  transform: scale(1.1);
+/* HEADER */
+header {
+    background: white;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 34242;
 }
 
-/* PANTALLA DE INICIO */
-#start-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* SECCIÓN PRINCIPAL */
+.principal {
+    height: 90vh;
+    background: transparent;
 }
 
-#start-screen button {
-  padding: 15px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 12px;
-  background: #28a745;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+.vertical-centered-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#start-screen button:hover {
-  background: #218838;
+.cta {
+    text-align: center;
 }
-</style>
-</head>
 
-<body>
+h1 {
+    font-weight: 700;
+    font-size: 50px;
+    color: white;
+}
 
-<div class="quiz-box">
-  <!-- PANTALLA DE INICIO -->
-  <div id="start-screen">
-    <h2>Welcome to Lucia's Quiz! 🎉</h2>
-    <button id="start-btn">Start Quiz</button>
-  </div>
+/* SOBRE MI */
+.nosotros {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60vh;
+    text-align: center;
+    padding-top: 100px;
+    color: rgba(255,255,255,.9);
+    background: rgba(0,0,0,0.35);
+}
 
-  <!-- CONTENIDO DEL QUIZ -->
-  <div id="quiz-content" style="display:none;">
-    <div class="score">Score: <span id="score">0</span></div>
-    <div class="timer">⏳ <span id="time">20</span></div>
-    <h2 id="question"></h2>
-    <div class="answers">
-      <button></button>
-      <button></button>
-      <button></button>
-      <button></button>
-    </div>
-  </div>
-</div>
+.nosotros h1 {
+    font-weight: 100;
+}
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+/* DATOS DE INTERES (FULL WIDTH) */
+.servicios {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: rgba(255,255,255,0.75);
+}
 
-  const quizBox = document.querySelector(".quiz-box");
+.servicios img {
+    width: 40%;
+    text-align: center;
+}
 
-  // Preguntas
-  let questions = [
-    { text: "Where did Lucia study Oceanography?", answers: ["Stanford University","Fudan University","University of Buenos Aires","National University of the South"], correct: 2 },
-    { text: "What does Lucia like to do in her free time?", answers: ["Read","Do sports","Learn about new things","All options are correct"], correct: 3 },
-    { text: "What best describes Lucia’s professional profile?", answers: ["She enjoys working on challenging tasks that push her to grow every day.","She is interested in fashion design","She prefers working alone and avoids challenges","She wants to work only in offices"], correct: 0 },
-    { text: "Where has Lucia gained field experience?", answers: ["In laboratories and classrooms","In an Antarctic research campaign","On an oceanographic cruise","All options are correct"], correct: 3 },
-    { text: "Which option best describes Lucia’s strengths and weaknesses?", answers: ["She is lazy but very confident.","She is highly motivated and curious, but sometimes feels overwhelmed.","She avoids challenges and prefers easy tasks.","She is disorganized and not interested in learning."], correct: 1 }
-  ];
+.servicios h1 {
+    color: #666;
+    font-weight: 100;
+}
 
-  let currentQuestion = 0;
-  let timeLeft = 20;
-  let timer;
-  let score = 0;
-  let correctCount = 0;
+.servicios .images {
+    padding-top: 30px;
+}
 
-  const startBtn = document.getElementById("start-btn");
-  const startScreen = document.getElementById("start-screen");
-  const quizContent = document.getElementById("quiz-content");
-  const scoreDisplay = document.getElementById("score");
-  const timeDisplay = document.getElementById("time");
-  const questionEl = document.getElementById("question");
-  const buttons = document.querySelectorAll(".answers button");
+.images .col-md-3 {
+    padding-top: 20px;
+    margin: auto;
+}
 
-  // INICIAR QUIZ
-  startBtn.onclick = () => {
-    startScreen.style.display = "none";
-    quizContent.style.display = "block";
-    loadQuestion();
-  };
+/* SOCIAL */
+.social {
+    text-align: center;
+}
 
-  function loadQuestion() {
-    quizBox.classList.add("highlight"); // efecto de resalte
-    setTimeout(() => quizBox.classList.remove("highlight"), 300);
+.social img {
+    width: 30%;
+    text-align: center;
+}
 
-    let q = questions[currentQuestion];
-    questionEl.innerText = q.text;
+/* FOOTER */
+footer {
+    background: rgba(117,117,117,0.35);
+    height: 50vh;
+    padding-top: 30px;
+    width: 100%;
+}
 
-    buttons.forEach((btn,index) => {
-      btn.innerText = q.answers[index];
-      btn.style.background = "#666";
-      btn.disabled = false;
-      btn.classList.remove("selected");
-      btn.onclick = () => checkAnswer(index);
-    });
+footer h1 {
+    text-align: center;
+    font-weight: 100;
+    color: white;
+}
 
-    timeLeft = 20;
-    timeDisplay.innerText = timeLeft;
-    scoreDisplay.innerText = score;
+#home {
+    color: white;
+}
 
-    clearInterval(timer);
-    timer = setInterval(countdown, 1000);
-  }
+.col-xs-4 {
+    text-align: center;
+}
 
-  function countdown() {
-    timeLeft--;
-    timeDisplay.innerText = timeLeft;
-    if(timeLeft <=0) nextQuestion();
-  }
+/* Evita que el header tape las secciones al hacer scroll */
+#about, #fields, #contact {
+    scroll-margin-top: 90px; /* Ajusta según altura de tu header */
+}
 
-  function checkAnswer(selected){
-    clearInterval(timer);
-    let q = questions[currentQuestion];
+/* MEDIA QUERY */
+@media only screen and (max-device-width: 480px),
+       only screen and (min-device-width: 560px) and (max-device-width: 1136px) {
 
-    buttons.forEach((btn,index)=>{
-      btn.disabled = true;
-      if(index === q.correct) btn.style.background = "green";
-      if(index === selected && index !== q.correct) btn.style.background = "red";
-      if(index === selected) btn.classList.add("selected");
-    });
-
-    if(selected === q.correct){
-      score += 20;
-      correctCount++;
+    .off {
+        display: none !important;
     }
 
-    scoreDisplay.innerText = score;
-
-    setTimeout(nextQuestion,1000);
-  }
-
-  function nextQuestion(){
-    currentQuestion++;
-    if(currentQuestion < questions.length) loadQuestion();
-    else{
-      quizContent.innerHTML = `
-        <h2>Quiz finished 🎉</h2>
-        <p>Correct answers: ${correctCount} / ${questions.length}</p>
-        <p>Final Score: ${score} / 100</p>
-      `;
+    .on {
+        display: block !important;
     }
-  }
 
-});
-</script>
+    .col-md-2 {
+        width: 100%;
+    }
 
-</body>
-</html>
+    .social img {
+        width: 100%;
+    }
+
+    .botonera li a {
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+
+    .nosotros {
+        height: 400px;
+        overflow: hidden;
+        padding-top: 15px;
+    }
+
+    #home {
+        padding-top: 65px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    footer {
+        padding-top: 10px;
+    }
+}
+
+/* =========================
+   CARRUSELES
+   ========================= */
+#carousel-section, #carousel-section-2 {
+    background: rgba(255,255,255,0.8); /* Fondo semitransparente */
+    padding: 50px 0;
+    border-radius: 10px;
+}
+
+#carousel-section h1, #carousel-section-2 h1 {
+    color: #333;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+#carousel-section p.description, #carousel-section-2 p.description {
+    text-align: center;
+    font-size: 16px;
+    max-width: 600px;
+    margin: 15px auto 0 auto;
+    color: #444;
+}
+
+/* Swiper Carrusel Estilo Revista */
+.mySwiper, .mySwiper2 {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.mySwiper .swiper-slide, .mySwiper2 .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; /* espacio entre fotos */
+}
+
+.mySwiper .swiper-slide img, .mySwiper2 .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* FLECHAS CARRUSEL - PARTE TRANSPARENTE MUY GRANDE */
+.swiper-button-next, .swiper-button-prev {
+    width: 200px; /* recuadro más grande */
+    height: 200px;
+    background: rgba(255,255,255,0.3); /* transparente */
+    border-radius: 20px;               /* bordes redondeados */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 20px;
+    color: black; /* flecha negra */
+}
+
+/* =========================
+   QUIZ SECTION
+   ========================= */
+.quiz-section {
+    background: rgba(180,220,255,0.7);
+    padding: 50px 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.quiz-section h1 {
+    color: #333;
+    font-weight: 600;
+}
+
+.quiz-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: 2px solid #666;
+    color: #666;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.quiz-button:hover {
+    background: #666;
+    color: white;
+    text-decoration: none;
+}
