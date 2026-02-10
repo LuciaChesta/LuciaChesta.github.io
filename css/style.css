@@ -310,80 +310,12 @@ footer h1 {
 }
 
 /* =========================
-   QUIZ ADICIONAL
+   MENSAJES SEGÚN PUNTAJE QUIZ
    ========================= */
-.quiz-box {
-    background: rgba(255,255,255,0.7); /* Fondo más transparente */
-    padding: 30px;
-    border-radius: 15px;
-    width: 500px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.quiz-box h2 {
-    color: #333;
-}
-
-.answers button {
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    background: #3b82f6; /* azul más intenso */
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.answers button:hover {
-    background: #2563eb; /* azul más oscuro al pasar */
-}
-
-.timer, .score {
-    position: absolute;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.timer {
-    top: 10px;
-    right: 15px;
-}
-
-.score {
-    top: 10px;
-    left: 15px;
-}
-
-/* Pantalla de inicio */
-#start-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#start-screen button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 12px;
-    background: #28a745;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#start-screen button:hover {
-    background: #218838;
-}
-
-/* Mensaje final */
-.quiz-finish {
-    font-size: 18px;
-    color: #333;
-    font-weight: 600;
+.quiz-result {
     margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
 }
